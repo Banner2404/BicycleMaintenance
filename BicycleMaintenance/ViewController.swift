@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import HealthKit
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        WorkoutDataManager.shared.authorizeHealthKit { _ in
+            WorkoutDataManager.shared.loadTotalDistance { distance in
+                print(distance)
+            }
+        }
     }
-
 
 }
 
