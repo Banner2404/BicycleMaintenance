@@ -6,7 +6,7 @@
 //  Copyright © 2020 Esobol. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class ServiceTypeViewModel {
 
@@ -21,6 +21,11 @@ class ServiceTypeViewModel {
     var health: Double {
         Double(distanceToRepair) / Double(service.distanceInt)
     }
+
+    var image: UIImage? {
+        return UIImage(named: "Services/\(service.image!)")
+    }
+
 
     private let service: ServiceType
     private let totalDistance: Int

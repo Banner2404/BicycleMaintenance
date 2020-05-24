@@ -40,7 +40,8 @@ extension DashboardViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(ofType: ServiceTypeTableViewCell.self, for: indexPath)
         let serviceViewModel = viewModel.viewModelForService(at: indexPath.row)
         cell.nameLabel.text = serviceViewModel.name
-        cell.distanceLeftLabel.text = serviceViewModel.distanceLeft + ":" + String(serviceViewModel.health)
+        cell.distanceLeftLabel.text = serviceViewModel.distanceLeft
+        cell.serviceImageView.image = serviceViewModel.image
         return cell
     }
 }

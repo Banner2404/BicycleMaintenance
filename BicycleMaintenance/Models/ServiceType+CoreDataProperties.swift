@@ -7,7 +7,7 @@
 //
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 
@@ -17,11 +17,11 @@ extension ServiceType {
         return NSFetchRequest<ServiceType>(entityName: "ServiceType")
     }
 
-    @NSManaged public var name: String?
+    @NSManaged public var name: String!
     @NSManaged public var distance: Int64
+    @NSManaged public var image: String!
 
     var distanceInt: Int {
         Int(distance)
     }
-
 }

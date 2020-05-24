@@ -28,9 +28,9 @@ class CoreDataManager {
     private init() {}
 
     func setupInitialData() {
-        setupInitialService(name: "Lube chain", distance: 200)
-        setupInitialService(name: "Replace chain", distance: 3000)
-        setupInitialService(name: "Charge computer", distance: 100)
+        setupInitialService(name: "Lube chain", distance: 200, image: "chain")
+        setupInitialService(name: "Replace chain", distance: 3000, image: "chain")
+        setupInitialService(name: "Charge computer", distance: 100, image: "computer")
         saveContext()
     }
 
@@ -55,9 +55,10 @@ class CoreDataManager {
         }
     }
 
-    private func setupInitialService(name: String, distance: Int) {
+    private func setupInitialService(name: String, distance: Int, image: String) {
         let service = ServiceType(context: persistentContainer.viewContext)
         service.name = name
         service.distance = Int64(distance)
+        service.image = image
     }
 }
