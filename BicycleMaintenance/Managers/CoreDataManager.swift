@@ -30,14 +30,14 @@ class CoreDataManager {
 
     func setupInitialData() {
         guard !UserDefaults.standard.bool(forKey: initialDataLoadedKey) else { return }
-        setupInitialService(name: "Lube chain", distance: 200, image: .chain)
-        setupInitialService(name: "Replace chain", distance: 3000, image: .chain)
-        setupInitialService(name: "Charge computer", distance: 100, image: .computer)
-        setupInitialService(name: "Sync computer", distance: 150, image: .computer)
-        setupInitialService(name: "Pump tyres", distance: 80, image: .wheel)
-        setupInitialService(name: "Clean bike", distance: 300, image: .frame)
-        setupInitialService(name: "Replace brakes", distance: 4000, image: .brake)
-        setupInitialService(name: "Tighten screws", distance: 500, image: .frame)
+        setupInitialService(name: "Lube chain", distance: 200, image: .chain, badge: .clean)
+        setupInitialService(name: "Replace chain", distance: 3000, image: .chain, badge: .replace)
+        setupInitialService(name: "Charge computer", distance: 100, image: .computer, badge: .charge)
+        setupInitialService(name: "Sync computer", distance: 150, image: .computer, badge: .cloud)
+        setupInitialService(name: "Pump tyres", distance: 80, image: .wheel, badge: .pump)
+        setupInitialService(name: "Clean bike", distance: 300, image: .frame, badge: .clean)
+        setupInitialService(name: "Replace brakes", distance: 4000, image: .brake, badge: .replace)
+        setupInitialService(name: "Tighten screws", distance: 500, image: .frame, badge: .screw)
         saveContext()
         UserDefaults.standard.set(true, forKey: initialDataLoadedKey)
     }
@@ -63,10 +63,11 @@ class CoreDataManager {
         }
     }
 
-    private func setupInitialService(name: String, distance: Int, image: ServiceType.Image) {
+    private func setupInitialService(name: String, distance: Int, image: ServiceType.Image, badge: ServiceType.Badge) {
         let service = ServiceType(context: persistentContainer.viewContext)
         service.name = name
         service.distance = Int64(distance)
         service.image = image.rawValue
+        service.badge = badge.rawValue
     }
 }

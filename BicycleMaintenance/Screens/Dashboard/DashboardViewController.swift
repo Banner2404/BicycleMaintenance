@@ -41,7 +41,11 @@ extension DashboardViewController: UITableViewDataSource {
         let serviceViewModel = viewModel.viewModelForService(at: indexPath.row)
         cell.nameLabel.text = serviceViewModel.name
         cell.distanceLeftLabel.text = serviceViewModel.distanceLeft
-        cell.serviceImageView.image = serviceViewModel.image
+        cell.totalDistanceLabel.text = serviceViewModel.serviceDistance
+        cell.serviceImageView.imageView.image = serviceViewModel.image
+        cell.serviceImageView.badgeView.imageView.image = serviceViewModel.badge
+        cell.serviceImageView.badgeView.imageView.tintColor = serviceViewModel.color
+        cell.healthBar.fillView.backgroundColor = serviceViewModel.color
         cell.healthBar.progress = serviceViewModel.health
         return cell
     }

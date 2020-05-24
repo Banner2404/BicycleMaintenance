@@ -20,6 +20,7 @@ extension ServiceType {
     @NSManaged public var name: String!
     @NSManaged public var distance: Int64
     @NSManaged public var image: String!
+    @NSManaged public var badge: String!
 
     var distanceInt: Int {
         Int(distance)
@@ -31,6 +32,15 @@ extension ServiceType {
         case computer
         case frame
         case wheel
+    }
+
+    enum Badge: String {
+        case charge
+        case clean
+        case cloud
+        case pump
+        case replace
+        case screw
     }
 
 }

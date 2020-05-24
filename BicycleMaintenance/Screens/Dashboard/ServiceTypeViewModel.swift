@@ -18,6 +18,10 @@ class ServiceTypeViewModel {
         "\(distanceToRepair) km left"
     }
 
+    var serviceDistance: String {
+        "\(service.distance) km"
+    }
+
     var health: Double {
         Double(distanceToRepair) / Double(service.distanceInt)
     }
@@ -26,6 +30,19 @@ class ServiceTypeViewModel {
         return UIImage(named: "Services/\(service.image!)")
     }
 
+    var badge: UIImage? {
+        return UIImage(named: "Badges/\(service.badge!)")
+    }
+
+    var color: UIColor {
+        if health > 0.66 {
+            return .conditionGood
+        } else if health > 0.33 {
+            return .conditionWarning
+        } else {
+            return .conditionBad
+        }
+    }
 
     private let service: ServiceType
     private let totalDistance: Int

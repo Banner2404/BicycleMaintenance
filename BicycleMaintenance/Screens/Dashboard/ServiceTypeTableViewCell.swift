@@ -12,13 +12,7 @@ class ServiceTypeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var distanceLeftLabel: UILabel!
-    @IBOutlet weak var serviceImageView: UIImageView!
+    @IBOutlet weak var totalDistanceLabel: UILabel!
+    @IBOutlet weak var serviceImageView: ServiceImageView!
     @IBOutlet weak var healthBar: HealthBar!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        serviceImageView.layer.cornerRadius = 5
-        serviceImageView.layer.borderWidth = 1
-        serviceImageView.layer.borderColor = UIColor.border.cgColor
-    }
 }
