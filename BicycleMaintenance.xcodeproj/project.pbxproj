@@ -20,6 +20,7 @@
 		D1675556247A5F57005A3586 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1675555247A5F57005A3586 /* CoreDataManager.swift */; };
 		D1A3282C247A71C400A32FE9 /* ServiceTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3282B247A71C400A32FE9 /* ServiceTypeViewModel.swift */; };
 		D1A3282E247A7DE000A32FE9 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3282D247A7DE000A32FE9 /* UIImage.swift */; };
+		D1A32830247A80C000A32FE9 /* HealthBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3282F247A80C000A32FE9 /* HealthBar.swift */; };
 		D1C206AC247A661A00C1926D /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C206AB247A661A00C1926D /* DashboardViewModel.swift */; };
 		D1C206AF247A67A100C1926D /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C206AE247A67A100C1926D /* UITableView.swift */; };
 		D1C206B1247A67C500C1926D /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C206B0247A67C500C1926D /* UITableViewCell.swift */; };
@@ -44,6 +45,7 @@
 		D1675555247A5F57005A3586 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D1A3282B247A71C400A32FE9 /* ServiceTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTypeViewModel.swift; sourceTree = "<group>"; };
 		D1A3282D247A7DE000A32FE9 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		D1A3282F247A80C000A32FE9 /* HealthBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthBar.swift; sourceTree = "<group>"; };
 		D1C206AB247A661A00C1926D /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		D1C206AE247A67A100C1926D /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		D1C206B0247A67C500C1926D /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				D1C206AB247A661A00C1926D /* DashboardViewModel.swift */,
 				D1A3282B247A71C400A32FE9 /* ServiceTypeViewModel.swift */,
 				D1C206B5247A684800C1926D /* ServiceTypeTableViewCell.swift */,
+				D1A3282F247A80C000A32FE9 /* HealthBar.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1A3282C247A71C400A32FE9 /* ServiceTypeViewModel.swift in Sources */,
+				D1A32830247A80C000A32FE9 /* HealthBar.swift in Sources */,
 				D1482F4724741E7200CC99BF /* DashboardViewController.swift in Sources */,
 				D1675552247A5F26005A3586 /* ServiceType+CoreDataClass.swift in Sources */,
 				D1482F4D24741E7200CC99BF /* BicycleMaintenance.xcdatamodeld in Sources */,

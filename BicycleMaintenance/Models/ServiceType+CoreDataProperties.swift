@@ -24,4 +24,13 @@ extension ServiceType {
     var distanceInt: Int {
         Int(distance)
     }
+
+    enum Image: String {
+        case brake
+        case chain
+        case computer
+        case frame
+        case wheel
+    }
+
 }

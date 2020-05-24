@@ -13,6 +13,7 @@ class ServiceTypeTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var distanceLeftLabel: UILabel!
     @IBOutlet weak var serviceImageView: UIImageView!
+    @IBOutlet weak var healthBar: HealthBar!
 
     override func awakeFromNib() {
         super.awakeFromNib()

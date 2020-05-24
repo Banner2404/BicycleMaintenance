@@ -42,6 +42,7 @@ extension DashboardViewController: UITableViewDataSource {
         cell.nameLabel.text = serviceViewModel.name
         cell.distanceLeftLabel.text = serviceViewModel.distanceLeft
         cell.serviceImageView.image = serviceViewModel.image
+        cell.healthBar.progress = serviceViewModel.health
         return cell
     }
 }

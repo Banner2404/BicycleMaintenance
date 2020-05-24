@@ -24,14 +24,22 @@ class CoreDataManager {
     }()
 
     private var managedContext: NSManagedObjectContext { persistentContainer.viewContext }
+    private let initialDataLoadedKey = "initialDataLoadedKey"
 
     private init() {}
 
     func setupInitialData() {
-        setupInitialService(name: "Lube chain", distance: 200, image: "chain")
-        setupInitialService(name: "Replace chain", distance: 3000, image: "chain")
-        setupInitialService(name: "Charge computer", distance: 100, image: "computer")
+        guard !UserDefaults.standard.bool(forKey: initialDataLoadedKey) else { return }
+        setupInitialService(name: "Lube chain", distance: 200, image: .chain)
+        setupInitialService(name: "Replace chain", distance: 3000, image: .chain)
+        setupInitialService(name: "Charge computer", distance: 100, image: .computer)
+        setupInitialService(name: "Sync computer", distance: 150, image: .computer)
+        setupInitialService(name: "Pump tyres", distance: 80, image: .wheel)
+        setupInitialService(name: "Clean bike", distance: 300, image: .frame)
+        setupInitialService(name: "Replace brakes", distance: 4000, image: .brake)
+        setupInitialService(name: "Tighten screws", distance: 500, image: .frame)
         saveContext()
+        UserDefaults.standard.set(true, forKey: initialDataLoadedKey)
     }
 
     func loadEntities() -> [ServiceType] {
@@ -44,7 +52,7 @@ class CoreDataManager {
 
     }
     
-    func saveContext () {
+    func saveContext() {
         if managedContext.hasChanges {
             do {
                 try managedContext.save()
@@ -55,10 +63,10 @@ class CoreDataManager {
         }
     }
 
-    private func setupInitialService(name: String, distance: Int, image: String) {
+    private func setupInitialService(name: String, distance: Int, image: ServiceType.Image) {
         let service = ServiceType(context: persistentContainer.viewContext)
         service.name = name
         service.distance = Int64(distance)
-        service.image = image
+        service.image = image.rawValue
     }
 }
