@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C199F06726DDB85A565BA1EF /* Pods_BicycleMaintenance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F490970B46335EF1E3D5AB14 /* Pods_BicycleMaintenance.framework */; };
 		D1482F4324741E7200CC99BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1482F4224741E7200CC99BF /* AppDelegate.swift */; };
 		D1482F4524741E7200CC99BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1482F4424741E7200CC99BF /* SceneDelegate.swift */; };
 		D1482F4724741E7200CC99BF /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1482F4624741E7200CC99BF /* DashboardViewController.swift */; };
@@ -17,11 +18,17 @@
 		D1675552247A5F26005A3586 /* ServiceType+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1675550247A5F26005A3586 /* ServiceType+CoreDataClass.swift */; };
 		D1675553247A5F26005A3586 /* ServiceType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1675551247A5F26005A3586 /* ServiceType+CoreDataProperties.swift */; };
 		D1675556247A5F57005A3586 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1675555247A5F57005A3586 /* CoreDataManager.swift */; };
+		D1A3282C247A71C400A32FE9 /* ServiceTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3282B247A71C400A32FE9 /* ServiceTypeViewModel.swift */; };
+		D1C206AC247A661A00C1926D /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C206AB247A661A00C1926D /* DashboardViewModel.swift */; };
+		D1C206AF247A67A100C1926D /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C206AE247A67A100C1926D /* UITableView.swift */; };
+		D1C206B1247A67C500C1926D /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C206B0247A67C500C1926D /* UITableViewCell.swift */; };
+		D1C206B6247A684800C1926D /* ServiceTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C206B5247A684800C1926D /* ServiceTypeTableViewCell.swift */; };
 		D1D16CF824799A7900A015C9 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D16CF724799A7900A015C9 /* HealthKit.framework */; };
 		D1D16CFA2479A90200A015C9 /* WorkoutDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D16CF92479A90200A015C9 /* WorkoutDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B591C4FCE85904C8C22BC58 /* Pods-BicycleMaintenance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BicycleMaintenance.debug.xcconfig"; path = "Target Support Files/Pods-BicycleMaintenance/Pods-BicycleMaintenance.debug.xcconfig"; sourceTree = "<group>"; };
 		D1482F3F24741E7200CC99BF /* BicycleMaintenance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BicycleMaintenance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1482F4224741E7200CC99BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1482F4424741E7200CC99BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,9 +41,16 @@
 		D1675550247A5F26005A3586 /* ServiceType+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServiceType+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D1675551247A5F26005A3586 /* ServiceType+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServiceType+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D1675555247A5F57005A3586 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		D1A3282B247A71C400A32FE9 /* ServiceTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTypeViewModel.swift; sourceTree = "<group>"; };
+		D1C206AB247A661A00C1926D /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		D1C206AE247A67A100C1926D /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		D1C206B0247A67C500C1926D /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		D1C206B5247A684800C1926D /* ServiceTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTypeTableViewCell.swift; sourceTree = "<group>"; };
 		D1D16CF524799A7900A015C9 /* BicycleMaintenance.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BicycleMaintenance.entitlements; sourceTree = "<group>"; };
 		D1D16CF724799A7900A015C9 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		D1D16CF92479A90200A015C9 /* WorkoutDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDataManager.swift; sourceTree = "<group>"; };
+		D72E966150AA0011244D62E2 /* Pods-BicycleMaintenance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BicycleMaintenance.release.xcconfig"; path = "Target Support Files/Pods-BicycleMaintenance/Pods-BicycleMaintenance.release.xcconfig"; sourceTree = "<group>"; };
+		F490970B46335EF1E3D5AB14 /* Pods_BicycleMaintenance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BicycleMaintenance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,18 +59,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1D16CF824799A7900A015C9 /* HealthKit.framework in Frameworks */,
+				C199F06726DDB85A565BA1EF /* Pods_BicycleMaintenance.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B77A43B404339E4625F8CA74 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0B591C4FCE85904C8C22BC58 /* Pods-BicycleMaintenance.debug.xcconfig */,
+				D72E966150AA0011244D62E2 /* Pods-BicycleMaintenance.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D1482F3624741E7200CC99BF = {
 			isa = PBXGroup;
 			children = (
 				D1482F4124741E7200CC99BF /* BicycleMaintenance */,
 				D1482F4024741E7200CC99BF /* Products */,
 				D1D16CF624799A7900A015C9 /* Frameworks */,
+				B77A43B404339E4625F8CA74 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,10 +99,10 @@
 				D1D16CF524799A7900A015C9 /* BicycleMaintenance.entitlements */,
 				D1482F4224741E7200CC99BF /* AppDelegate.swift */,
 				D1482F4424741E7200CC99BF /* SceneDelegate.swift */,
+				D1C206AD247A677A00C1926D /* Extensions */,
 				D1675554247A5F2A005A3586 /* Models */,
-				D1D16CF92479A90200A015C9 /* WorkoutDataManager.swift */,
-				D1675555247A5F57005A3586 /* CoreDataManager.swift */,
-				D1482F4624741E7200CC99BF /* DashboardViewController.swift */,
+				D1C206B4247A682500C1926D /* Managers */,
+				D1C206B2247A680800C1926D /* Screens */,
 				D1482F4824741E7200CC99BF /* Main.storyboard */,
 				D1482F4E24741E7500CC99BF /* Assets.xcassets */,
 				D1482F5024741E7500CC99BF /* LaunchScreen.storyboard */,
@@ -96,10 +121,48 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		D1C206AD247A677A00C1926D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D1C206AE247A67A100C1926D /* UITableView.swift */,
+				D1C206B0247A67C500C1926D /* UITableViewCell.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D1C206B2247A680800C1926D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D1C206B3247A681900C1926D /* Dashboard */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		D1C206B3247A681900C1926D /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				D1482F4624741E7200CC99BF /* DashboardViewController.swift */,
+				D1C206AB247A661A00C1926D /* DashboardViewModel.swift */,
+				D1A3282B247A71C400A32FE9 /* ServiceTypeViewModel.swift */,
+				D1C206B5247A684800C1926D /* ServiceTypeTableViewCell.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		D1C206B4247A682500C1926D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D1D16CF92479A90200A015C9 /* WorkoutDataManager.swift */,
+				D1675555247A5F57005A3586 /* CoreDataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		D1D16CF624799A7900A015C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				D1D16CF724799A7900A015C9 /* HealthKit.framework */,
+				F490970B46335EF1E3D5AB14 /* Pods_BicycleMaintenance.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -111,9 +174,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1482F5624741E7500CC99BF /* Build configuration list for PBXNativeTarget "BicycleMaintenance" */;
 			buildPhases = (
+				5F0E27F842CD44B21CABD0FF /* [CP] Check Pods Manifest.lock */,
 				D1482F3B24741E7200CC99BF /* Sources */,
 				D1482F3C24741E7200CC99BF /* Frameworks */,
 				D1482F3D24741E7200CC99BF /* Resources */,
+				2B1D385F20A354E345E1CE28 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -170,17 +235,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2B1D385F20A354E345E1CE28 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BicycleMaintenance/Pods-BicycleMaintenance-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BicycleMaintenance/Pods-BicycleMaintenance-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BicycleMaintenance/Pods-BicycleMaintenance-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F0E27F842CD44B21CABD0FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BicycleMaintenance-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D1482F3B24741E7200CC99BF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1A3282C247A71C400A32FE9 /* ServiceTypeViewModel.swift in Sources */,
 				D1482F4724741E7200CC99BF /* DashboardViewController.swift in Sources */,
 				D1675552247A5F26005A3586 /* ServiceType+CoreDataClass.swift in Sources */,
 				D1482F4D24741E7200CC99BF /* BicycleMaintenance.xcdatamodeld in Sources */,
+				D1C206B6247A684800C1926D /* ServiceTypeTableViewCell.swift in Sources */,
+				D1C206AC247A661A00C1926D /* DashboardViewModel.swift in Sources */,
 				D1D16CFA2479A90200A015C9 /* WorkoutDataManager.swift in Sources */,
+				D1C206B1247A67C500C1926D /* UITableViewCell.swift in Sources */,
 				D1675553247A5F26005A3586 /* ServiceType+CoreDataProperties.swift in Sources */,
 				D1482F4324741E7200CC99BF /* AppDelegate.swift in Sources */,
+				D1C206AF247A67A100C1926D /* UITableView.swift in Sources */,
 				D1675556247A5F57005A3586 /* CoreDataManager.swift in Sources */,
 				D1482F4524741E7200CC99BF /* SceneDelegate.swift in Sources */,
 			);
@@ -324,6 +436,7 @@
 		};
 		D1482F5724741E7500CC99BF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B591C4FCE85904C8C22BC58 /* Pods-BicycleMaintenance.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BicycleMaintenance/BicycleMaintenance.entitlements;
@@ -343,6 +456,7 @@
 		};
 		D1482F5824741E7500CC99BF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D72E966150AA0011244D62E2 /* Pods-BicycleMaintenance.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BicycleMaintenance/BicycleMaintenance.entitlements;
