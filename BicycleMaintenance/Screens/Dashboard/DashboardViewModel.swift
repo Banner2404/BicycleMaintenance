@@ -12,7 +12,7 @@ import RxCocoa
 
 class DashboardViewModel {
 
-    var services: Driver<[ServiceType]> {
+    var services: Driver<[ServiceTypeViewModel]> {
         servicesRelay.asDriver()
     }
 
@@ -20,22 +20,25 @@ class DashboardViewModel {
         servicesRelay.value.count
     }
 
-    private let servicesRelay = BehaviorRelay<[ServiceType]>(value: [])
-    private let distanceRelay = BehaviorRelay<Int>(value: 0)
+    private let servicesRelay = BehaviorRelay<[ServiceTypeViewModel]>(value: [])
     private let disposeBag = DisposeBag()
 
     func loadData() {
         Observable
             .zip(loadServices().asObservable(), loadWorkouts().asObservable())
-            .subscribe(onNext: { [weak self] services, distance in
-                self?.servicesRelay.accept(services)
-                self?.distanceRelay.accept(distance)
-            })
+            .map { services, distance in
+                return services
+                    .map { service in
+                        ServiceTypeViewModel(service: service, totalDistance: distance)
+                    }
+                    .sorted { $0.health < $1.health }
+            }
+            .bind(to: servicesRelay)
             .disposed(by: disposeBag)
     }
 
     func viewModelForService(at index: Int) -> ServiceTypeViewModel {
-        return ServiceTypeViewModel(service: servicesRelay.value[index], totalDistance: distanceRelay.value)
+        return servicesRelay.value[index]
     }
 
     private func loadServices() -> Single<[ServiceType]> {

@@ -12,7 +12,7 @@ class HealthBar: UIView {
 
     var progress: Double = 0 {
         didSet {
-            updateWidthConstraint()
+            updateProgress()
         }
     }
     private let fillContainer = UIView()
@@ -50,14 +50,24 @@ private extension HealthBar {
 
         addSubview(fillView)
         fillView.layer.cornerRadius = cornerRadius
-        fillView.backgroundColor = UIColor.green
         fillView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             fillView.leftAnchor.constraint(equalTo: leftAnchor),
             fillView.topAnchor.constraint(equalTo: topAnchor),
             fillView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+        updateProgress()
+    }
+
+    func updateProgress() {
         updateWidthConstraint()
+        if progress > 0.66 {
+            fillView.backgroundColor = .conditionGood
+        } else if progress > 0.33 {
+            fillView.backgroundColor = .conditionWarning
+        } else {
+            fillView.backgroundColor = .conditionBad
+        }
     }
 
     func updateWidthConstraint() {
@@ -69,4 +79,5 @@ private extension HealthBar {
         )
         widthConstraint?.isActive = true
     }
+
 }

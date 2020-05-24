@@ -19,7 +19,7 @@
 		D1675553247A5F26005A3586 /* ServiceType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1675551247A5F26005A3586 /* ServiceType+CoreDataProperties.swift */; };
 		D1675556247A5F57005A3586 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1675555247A5F57005A3586 /* CoreDataManager.swift */; };
 		D1A3282C247A71C400A32FE9 /* ServiceTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3282B247A71C400A32FE9 /* ServiceTypeViewModel.swift */; };
-		D1A3282E247A7DE000A32FE9 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3282D247A7DE000A32FE9 /* UIImage.swift */; };
+		D1A3282E247A7DE000A32FE9 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3282D247A7DE000A32FE9 /* UIColor.swift */; };
 		D1A32830247A80C000A32FE9 /* HealthBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3282F247A80C000A32FE9 /* HealthBar.swift */; };
 		D1C206AC247A661A00C1926D /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C206AB247A661A00C1926D /* DashboardViewModel.swift */; };
 		D1C206AF247A67A100C1926D /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C206AE247A67A100C1926D /* UITableView.swift */; };
@@ -44,7 +44,7 @@
 		D1675551247A5F26005A3586 /* ServiceType+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServiceType+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D1675555247A5F57005A3586 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D1A3282B247A71C400A32FE9 /* ServiceTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTypeViewModel.swift; sourceTree = "<group>"; };
-		D1A3282D247A7DE000A32FE9 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		D1A3282D247A7DE000A32FE9 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		D1A3282F247A80C000A32FE9 /* HealthBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthBar.swift; sourceTree = "<group>"; };
 		D1C206AB247A661A00C1926D /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		D1C206AE247A67A100C1926D /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 			children = (
 				D1C206AE247A67A100C1926D /* UITableView.swift */,
 				D1C206B0247A67C500C1926D /* UITableViewCell.swift */,
-				D1A3282D247A7DE000A32FE9 /* UIImage.swift */,
+				D1A3282D247A7DE000A32FE9 /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -302,7 +302,7 @@
 				D1C206AF247A67A100C1926D /* UITableView.swift in Sources */,
 				D1675556247A5F57005A3586 /* CoreDataManager.swift in Sources */,
 				D1482F4524741E7200CC99BF /* SceneDelegate.swift in Sources */,
-				D1A3282E247A7DE000A32FE9 /* UIImage.swift in Sources */,
+				D1A3282E247A7DE000A32FE9 /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

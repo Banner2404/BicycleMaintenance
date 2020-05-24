@@ -58,7 +58,8 @@ class WorkoutDataManager {
             let totalDistance = workouts.reduce(0) { sum, workout in
                 return sum + (workout.totalDistance?.doubleValue(for: .meterUnit(with: .kilo)) ?? 0)
             }
-            completion(Int(totalDistance))
+            //completion(Int(totalDistance))
+            completion(140)
         }
         HKHealthStore().execute(query)
     }

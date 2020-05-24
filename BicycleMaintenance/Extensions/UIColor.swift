@@ -1,5 +1,5 @@
 //
-//  UIImage.swift
+//  UIColor.swift
 //  BicycleMaintenance
 //
 //  Created by Евгений Соболь on 5/24/20.
@@ -12,6 +12,18 @@ extension UIColor {
 
     static var border: UIColor {
         UIColor(151, 151, 151)
+    }
+
+    static var conditionGood: UIColor {
+        UIColor.green
+    }
+
+    static var conditionWarning: UIColor {
+        UIColor.yellow
+    }
+
+    static var conditionBad: UIColor {
+        UIColor.red
     }
 
     convenience init(_ r: Int, _ g: Int, _ b: Int) {
