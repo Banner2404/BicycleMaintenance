@@ -13,11 +13,7 @@ class DashboardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        WorkoutDataManager.shared.authorizeHealthKit { _ in
-            WorkoutDataManager.shared.loadTotalDistance { distance in
-                print(distance)
-            }
-        }
+        print(CoreDataManager.shared.loadEntities())
     }
 
 }

@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		D1482F4324741E7200CC99BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1482F4224741E7200CC99BF /* AppDelegate.swift */; };
 		D1482F4524741E7200CC99BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1482F4424741E7200CC99BF /* SceneDelegate.swift */; };
-		D1482F4724741E7200CC99BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1482F4624741E7200CC99BF /* ViewController.swift */; };
+		D1482F4724741E7200CC99BF /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1482F4624741E7200CC99BF /* DashboardViewController.swift */; };
 		D1482F4A24741E7200CC99BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1482F4824741E7200CC99BF /* Main.storyboard */; };
 		D1482F4D24741E7200CC99BF /* BicycleMaintenance.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1482F4B24741E7200CC99BF /* BicycleMaintenance.xcdatamodeld */; };
 		D1482F4F24741E7500CC99BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1482F4E24741E7500CC99BF /* Assets.xcassets */; };
 		D1482F5224741E7500CC99BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1482F5024741E7500CC99BF /* LaunchScreen.storyboard */; };
+		D1675552247A5F26005A3586 /* ServiceType+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1675550247A5F26005A3586 /* ServiceType+CoreDataClass.swift */; };
+		D1675553247A5F26005A3586 /* ServiceType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1675551247A5F26005A3586 /* ServiceType+CoreDataProperties.swift */; };
+		D1675556247A5F57005A3586 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1675555247A5F57005A3586 /* CoreDataManager.swift */; };
 		D1D16CF824799A7900A015C9 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D16CF724799A7900A015C9 /* HealthKit.framework */; };
 		D1D16CFA2479A90200A015C9 /* WorkoutDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D16CF92479A90200A015C9 /* WorkoutDataManager.swift */; };
 /* End PBXBuildFile section */
@@ -22,12 +25,15 @@
 		D1482F3F24741E7200CC99BF /* BicycleMaintenance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BicycleMaintenance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1482F4224741E7200CC99BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1482F4424741E7200CC99BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D1482F4624741E7200CC99BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D1482F4624741E7200CC99BF /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		D1482F4924741E7200CC99BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D1482F4C24741E7200CC99BF /* BicycleMaintenance.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BicycleMaintenance.xcdatamodel; sourceTree = "<group>"; };
 		D1482F4E24741E7500CC99BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1482F5124741E7500CC99BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1482F5324741E7500CC99BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1675550247A5F26005A3586 /* ServiceType+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServiceType+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D1675551247A5F26005A3586 /* ServiceType+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServiceType+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D1675555247A5F57005A3586 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D1D16CF524799A7900A015C9 /* BicycleMaintenance.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BicycleMaintenance.entitlements; sourceTree = "<group>"; };
 		D1D16CF724799A7900A015C9 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		D1D16CF92479A90200A015C9 /* WorkoutDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDataManager.swift; sourceTree = "<group>"; };
@@ -68,8 +74,10 @@
 				D1D16CF524799A7900A015C9 /* BicycleMaintenance.entitlements */,
 				D1482F4224741E7200CC99BF /* AppDelegate.swift */,
 				D1482F4424741E7200CC99BF /* SceneDelegate.swift */,
+				D1675554247A5F2A005A3586 /* Models */,
 				D1D16CF92479A90200A015C9 /* WorkoutDataManager.swift */,
-				D1482F4624741E7200CC99BF /* ViewController.swift */,
+				D1675555247A5F57005A3586 /* CoreDataManager.swift */,
+				D1482F4624741E7200CC99BF /* DashboardViewController.swift */,
 				D1482F4824741E7200CC99BF /* Main.storyboard */,
 				D1482F4E24741E7500CC99BF /* Assets.xcassets */,
 				D1482F5024741E7500CC99BF /* LaunchScreen.storyboard */,
@@ -77,6 +85,15 @@
 				D1482F4B24741E7200CC99BF /* BicycleMaintenance.xcdatamodeld */,
 			);
 			path = BicycleMaintenance;
+			sourceTree = "<group>";
+		};
+		D1675554247A5F2A005A3586 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D1675550247A5F26005A3586 /* ServiceType+CoreDataClass.swift */,
+				D1675551247A5F26005A3586 /* ServiceType+CoreDataProperties.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		D1D16CF624799A7900A015C9 /* Frameworks */ = {
@@ -158,10 +175,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1482F4724741E7200CC99BF /* ViewController.swift in Sources */,
+				D1482F4724741E7200CC99BF /* DashboardViewController.swift in Sources */,
+				D1675552247A5F26005A3586 /* ServiceType+CoreDataClass.swift in Sources */,
 				D1482F4D24741E7200CC99BF /* BicycleMaintenance.xcdatamodeld in Sources */,
 				D1D16CFA2479A90200A015C9 /* WorkoutDataManager.swift in Sources */,
+				D1675553247A5F26005A3586 /* ServiceType+CoreDataProperties.swift in Sources */,
 				D1482F4324741E7200CC99BF /* AppDelegate.swift in Sources */,
+				D1675556247A5F57005A3586 /* CoreDataManager.swift in Sources */,
 				D1482F4524741E7200CC99BF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
