@@ -28,9 +28,9 @@ class CoreDataManager {
     private init() {}
 
     func setupInitialData() {
-        let service = ServiceType(context: persistentContainer.viewContext)
-        service.name = "Test"
-        service.distance = 100
+        setupInitialService(name: "Lube chain", distance: 200)
+        setupInitialService(name: "Replace chain", distance: 3000)
+        setupInitialService(name: "Charge computer", distance: 100)
         saveContext()
     }
 
@@ -53,5 +53,11 @@ class CoreDataManager {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+
+    private func setupInitialService(name: String, distance: Int) {
+        let service = ServiceType(context: persistentContainer.viewContext)
+        service.name = name
+        service.distance = Int64(distance)
     }
 }

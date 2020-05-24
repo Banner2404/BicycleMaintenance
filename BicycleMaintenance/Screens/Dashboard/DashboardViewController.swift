@@ -39,7 +39,8 @@ extension DashboardViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(ofType: ServiceTypeTableViewCell.self, for: indexPath)
         let serviceViewModel = viewModel.viewModelForService(at: indexPath.row)
-        cell.textLabel?.text = serviceViewModel.name
+        cell.nameLabel.text = serviceViewModel.name
+        cell.distanceLeftLabel.text = serviceViewModel.distanceLeft + ":" + String(serviceViewModel.health)
         return cell
     }
 }

@@ -20,4 +20,8 @@ extension ServiceType {
     @NSManaged public var name: String?
     @NSManaged public var distance: Int64
 
+    var distanceInt: Int {
+        Int(distance)
+    }
+
 }

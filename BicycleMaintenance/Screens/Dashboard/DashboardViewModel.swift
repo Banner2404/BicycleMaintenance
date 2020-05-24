@@ -21,12 +21,33 @@ class DashboardViewModel {
     }
 
     private let servicesRelay = BehaviorRelay<[ServiceType]>(value: [])
+    private let distanceRelay = BehaviorRelay<Int>(value: 0)
+    private let disposeBag = DisposeBag()
 
     func loadData() {
-        servicesRelay.accept(CoreDataManager.shared.loadEntities())
+        Observable
+            .zip(loadServices().asObservable(), loadWorkouts().asObservable())
+            .subscribe(onNext: { [weak self] services, distance in
+                self?.servicesRelay.accept(services)
+                self?.distanceRelay.accept(distance)
+            })
+            .disposed(by: disposeBag)
     }
 
     func viewModelForService(at index: Int) -> ServiceTypeViewModel {
-        return ServiceTypeViewModel(service: servicesRelay.value[index])
+        return ServiceTypeViewModel(service: servicesRelay.value[index], totalDistance: distanceRelay.value)
+    }
+
+    private func loadServices() -> Single<[ServiceType]> {
+        return Single.just(CoreDataManager.shared.loadEntities())
+    }
+
+    private func loadWorkouts() -> Single<Int> {
+        return Single.create { observer in
+            WorkoutDataManager.shared.loadTotalDistance { distance in
+                observer(.success(distance ?? 0))
+            }
+            return Disposables.create()
+        }
     }
 }

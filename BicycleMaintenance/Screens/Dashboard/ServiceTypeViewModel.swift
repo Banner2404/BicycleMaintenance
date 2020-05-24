@@ -14,9 +14,22 @@ class ServiceTypeViewModel {
         service.name ?? ""
     }
 
-    private let service: ServiceType
+    var distanceLeft: String {
+        "\(distanceToRepair) km left"
+    }
 
-    init(service: ServiceType) {
+    var health: Double {
+        Double(distanceToRepair) / Double(service.distanceInt)
+    }
+
+    private let service: ServiceType
+    private let totalDistance: Int
+    private var distanceToRepair: Int {
+        max(service.distanceInt - totalDistance, 0)
+    }
+
+    init(service: ServiceType, totalDistance: Int) {
         self.service = service
+        self.totalDistance = totalDistance
     }
 }

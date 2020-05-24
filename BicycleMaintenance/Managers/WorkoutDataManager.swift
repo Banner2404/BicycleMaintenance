@@ -33,7 +33,17 @@ class WorkoutDataManager {
         }
     }
 
-    func loadTotalDistance(completion: @escaping (Double?) -> Void) {
+    func loadTotalDistance(completion: @escaping (Int?) -> Void) {
+        authorizeHealthKit { [weak self] authorized in
+            guard authorized else {
+                completion(nil)
+                return
+            }
+            self?.loadDistanceData(completion: completion)
+        }
+    }
+
+    private func loadDistanceData(completion: @escaping (Int?) -> Void) {
         let predicate = HKQuery.predicateForWorkouts(with: .cycling)
         let query = HKSampleQuery(sampleType: .workoutType(), predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { query, samples, error in
             if let error = error {
@@ -48,7 +58,7 @@ class WorkoutDataManager {
             let totalDistance = workouts.reduce(0) { sum, workout in
                 return sum + (workout.totalDistance?.doubleValue(for: .meterUnit(with: .kilo)) ?? 0)
             }
-            completion(totalDistance)
+            completion(Int(totalDistance))
         }
         HKHealthStore().execute(query)
     }
