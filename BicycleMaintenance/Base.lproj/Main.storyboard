@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="122" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zbe-db-wpA">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="361" width="414" height="535"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ServiceTypeTableViewCell" rowHeight="130" id="R41-co-MmF" customClass="ServiceTypeTableViewCell" customModule="BicycleMaintenance" customModuleProvider="target">
@@ -91,17 +91,28 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="1Fz-vc-g89"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPD-on-LrZ" customClass="BikeView" customModule="BicycleMaintenance" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="317"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CPD-on-LrZ" secondAttribute="height" multiplier="414:317" id="Hej-HN-Kdd"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Zbe-db-wpA" firstAttribute="top" secondItem="CPD-on-LrZ" secondAttribute="bottom" id="8zH-9m-kzr"/>
+                            <constraint firstItem="CPD-on-LrZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bd0-bc-rR0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zbe-db-wpA" secondAttribute="trailing" id="Mfc-0F-5QX"/>
                             <constraint firstAttribute="bottom" secondItem="Zbe-db-wpA" secondAttribute="bottom" id="QIa-OE-Yqz"/>
-                            <constraint firstItem="Zbe-db-wpA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="acM-9r-VYI"/>
+                            <constraint firstItem="CPD-on-LrZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rBc-NX-sei"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CPD-on-LrZ" secondAttribute="trailing" id="rqH-lK-etf"/>
                             <constraint firstItem="Zbe-db-wpA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ykF-8L-Mm5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bikeView" destination="CPD-on-LrZ" id="08c-RD-bXi"/>
                         <outlet property="tableView" destination="Zbe-db-wpA" id="UlE-we-BKV"/>
                     </connections>
                 </viewController>

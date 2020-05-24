@@ -24,6 +24,8 @@
 		D1A32832247A8B8F00A32FE9 /* ServiceBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A32831247A8B8F00A32FE9 /* ServiceBadgeView.swift */; };
 		D1A32834247A8C0900A32FE9 /* ServiceImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A32833247A8C0900A32FE9 /* ServiceImageView.swift */; };
 		D1A32836247A8C4000A32FE9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A32835247A8C4000A32FE9 /* UIView.swift */; };
+		D1A32838247AAEF600A32FE9 /* ServiceMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A32837247AAEF600A32FE9 /* ServiceMarkerView.swift */; };
+		D1A3283A247AAFBF00A32FE9 /* BikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A32839247AAFBF00A32FE9 /* BikeView.swift */; };
 		D1C206AC247A661A00C1926D /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C206AB247A661A00C1926D /* DashboardViewModel.swift */; };
 		D1C206AF247A67A100C1926D /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C206AE247A67A100C1926D /* UITableView.swift */; };
 		D1C206B1247A67C500C1926D /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C206B0247A67C500C1926D /* UITableViewCell.swift */; };
@@ -52,6 +54,8 @@
 		D1A32831247A8B8F00A32FE9 /* ServiceBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceBadgeView.swift; sourceTree = "<group>"; };
 		D1A32833247A8C0900A32FE9 /* ServiceImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceImageView.swift; sourceTree = "<group>"; };
 		D1A32835247A8C4000A32FE9 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		D1A32837247AAEF600A32FE9 /* ServiceMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMarkerView.swift; sourceTree = "<group>"; };
+		D1A32839247AAFBF00A32FE9 /* BikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeView.swift; sourceTree = "<group>"; };
 		D1C206AB247A661A00C1926D /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		D1C206AE247A67A100C1926D /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		D1C206B0247A67C500C1926D /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 				D1A3282F247A80C000A32FE9 /* HealthBar.swift */,
 				D1A32833247A8C0900A32FE9 /* ServiceImageView.swift */,
 				D1A32831247A8B8F00A32FE9 /* ServiceBadgeView.swift */,
+				D1A32839247AAFBF00A32FE9 /* BikeView.swift */,
+				D1A32837247AAEF600A32FE9 /* ServiceMarkerView.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 				D1675552247A5F26005A3586 /* ServiceType+CoreDataClass.swift in Sources */,
 				D1482F4D24741E7200CC99BF /* BicycleMaintenance.xcdatamodeld in Sources */,
 				D1C206B6247A684800C1926D /* ServiceTypeTableViewCell.swift in Sources */,
+				D1A32838247AAEF600A32FE9 /* ServiceMarkerView.swift in Sources */,
 				D1C206AC247A661A00C1926D /* DashboardViewModel.swift in Sources */,
 				D1D16CFA2479A90200A015C9 /* WorkoutDataManager.swift in Sources */,
 				D1C206B1247A67C500C1926D /* UITableViewCell.swift in Sources */,
@@ -311,6 +318,7 @@
 				D1A32834247A8C0900A32FE9 /* ServiceImageView.swift in Sources */,
 				D1482F4324741E7200CC99BF /* AppDelegate.swift in Sources */,
 				D1C206AF247A67A100C1926D /* UITableView.swift in Sources */,
+				D1A3283A247AAFBF00A32FE9 /* BikeView.swift in Sources */,
 				D1675556247A5F57005A3586 /* CoreDataManager.swift in Sources */,
 				D1482F4524741E7200CC99BF /* SceneDelegate.swift in Sources */,
 				D1A32836247A8C4000A32FE9 /* UIView.swift in Sources */,

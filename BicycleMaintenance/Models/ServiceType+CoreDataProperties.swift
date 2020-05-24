@@ -21,9 +21,15 @@ extension ServiceType {
     @NSManaged public var distance: Int64
     @NSManaged public var image: String!
     @NSManaged public var badge: String!
+    @NSManaged public var markerX: Double
+    @NSManaged public var markerY: Double
 
     var distanceInt: Int {
         Int(distance)
+    }
+
+    var markerPosition: CGPoint {
+        return CGPoint(x: markerX, y: markerY)
     }
 
     enum Image: String {

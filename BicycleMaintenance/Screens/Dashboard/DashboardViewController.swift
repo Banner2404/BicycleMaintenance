@@ -15,17 +15,28 @@ class DashboardViewController: UIViewController {
     private var viewModel: DashboardViewModel!
     private let disposeBag = DisposeBag()
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var bikeView: BikeView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = DashboardViewModel()
         viewModel.services
-            .drive(onNext: { [weak self] _ in
-                self?.tableView.reloadData()
+            .drive(onNext: { [weak self] viewModels in
+                self?.reloadData(viewModels)
             })
             .disposed(by: disposeBag)
         
         viewModel.loadData()
+    }
+
+    private func reloadData(_ viewModels: [ServiceTypeViewModel]) {
+        tableView.reloadData()
+        reloadMarkers(viewModels)
+    }
+
+    private func reloadMarkers(_ viewModels: [ServiceTypeViewModel]) {
+        let markers = viewModels.map { BikeView.Marker(position: $0.markerPosition, condition: $0.condition) }
+        bikeView.setup(markers: markers)
     }
 }
 

@@ -11,19 +11,19 @@ import UIKit
 class ServiceTypeViewModel {
 
     var name: String {
-        service.name ?? ""
+        return service.name ?? ""
     }
 
     var distanceLeft: String {
-        "\(distanceToRepair) km left"
+        return "\(distanceToRepair) km left"
     }
 
     var serviceDistance: String {
-        "\(service.distance) km"
+        return "\(service.distance) km"
     }
 
     var health: Double {
-        Double(distanceToRepair) / Double(service.distanceInt)
+        return Double(distanceToRepair) / Double(service.distanceInt)
     }
 
     var image: UIImage? {
@@ -35,13 +35,15 @@ class ServiceTypeViewModel {
     }
 
     var color: UIColor {
-        if health > 0.66 {
-            return .conditionGood
-        } else if health > 0.33 {
-            return .conditionWarning
-        } else {
-            return .conditionBad
-        }
+        return condition.color
+    }
+
+    var condition: Condition {
+        return Condition(health: health)
+    }
+
+    var markerPosition: CGPoint {
+        return service.markerPosition
     }
 
     private let service: ServiceType
@@ -53,5 +55,32 @@ class ServiceTypeViewModel {
     init(service: ServiceType, totalDistance: Int) {
         self.service = service
         self.totalDistance = totalDistance
+    }
+
+    enum Condition {
+        case good
+        case warning
+        case bad
+
+        init(health: Double) {
+            if health > 0.66 {
+                self = .good
+            } else if health > 0.33 {
+                self = .warning
+            } else {
+                self = .bad
+            }
+        }
+
+        var color: UIColor {
+            switch self {
+            case .good:
+                return .conditionGood
+            case .warning:
+                return .conditionWarning
+            case .bad:
+                return .conditionBad
+            }
+        }
     }
 }
