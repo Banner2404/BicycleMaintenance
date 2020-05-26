@@ -4,11 +4,12 @@
         <attribute name="badge" attributeType="String"/>
         <attribute name="distance" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="image" attributeType="String"/>
-        <attribute name="markerX" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="markerY" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="lastRepairDistance" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="markerX" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="markerY" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
     </entity>
     <elements>
-        <element name="ServiceType" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="ServiceType" positionX="-63" positionY="-18" width="128" height="148"/>
     </elements>
 </model>

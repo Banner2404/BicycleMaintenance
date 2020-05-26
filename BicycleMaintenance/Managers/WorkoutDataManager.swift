@@ -8,12 +8,21 @@
 
 import Foundation
 import HealthKit
+import RxSwift
+import RxCocoa
 
 class WorkoutDataManager {
 
     static let shared = WorkoutDataManager()
+    var distance: Observable<Int> {
+        return distanceSubject.asObservable()
+    }
 
-    private init() {}
+    private let distanceSubject = ReplaySubject<Int>.create(bufferSize: 1)
+
+    private init() {
+        loadTotalDistance()
+    }
 
     func authorizeHealthKit(completion: @escaping (Bool) -> Void) {
         guard HKHealthStore.isHealthDataAvailable() else {
@@ -33,33 +42,31 @@ class WorkoutDataManager {
         }
     }
 
-    func loadTotalDistance(completion: @escaping (Int?) -> Void) {
+    func loadTotalDistance() {
         authorizeHealthKit { [weak self] authorized in
             guard authorized else {
-                completion(nil)
                 return
             }
-            self?.loadDistanceData(completion: completion)
+            self?.loadDistanceData()
         }
     }
 
-    private func loadDistanceData(completion: @escaping (Int?) -> Void) {
+    private func loadDistanceData() {
         let predicate = HKQuery.predicateForWorkouts(with: .cycling)
-        let query = HKSampleQuery(sampleType: .workoutType(), predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { query, samples, error in
+        let query = HKSampleQuery(sampleType: .workoutType(), predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { [weak self] query, samples, error in
             if let error = error {
                 print(error)
-                completion(nil)
             }
             guard let workouts = samples as? [HKWorkout] else {
                 print("Unable to get workouts")
-                completion(nil)
                 return
             }
             let totalDistance = workouts.reduce(0) { sum, workout in
                 return sum + (workout.totalDistance?.doubleValue(for: .meterUnit(with: .kilo)) ?? 0)
             }
-            //completion(Int(totalDistance))
-            completion(140)
+            DispatchQueue.main.async {
+                self?.distanceSubject.on(.next(Int(totalDistance)))
+            }
         }
         HKHealthStore().execute(query)
     }

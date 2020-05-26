@@ -8,11 +8,18 @@
 
 import Foundation
 import CoreData
+import RxSwift
+import RxCocoa
 
 class CoreDataManager {
 
     static let shared = CoreDataManager()
 
+    var services: Observable<[ServiceType]> {
+        return servicesRelay.asObservable()
+    }
+
+    private let servicesRelay = BehaviorRelay<[ServiceType]>(value: [])
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "BicycleMaintenance")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -23,10 +30,19 @@ class CoreDataManager {
         return container
     }()
 
+    private let disposeBag = DisposeBag()
     private var managedContext: NSManagedObjectContext { persistentContainer.viewContext }
     private let initialDataLoadedKey = "initialDataLoadedKey"
 
-    private init() {}
+    private init() {
+        NotificationCenter.default.rx.notification(.NSManagedObjectContextObjectsDidChange)
+            .subscribe(onNext: { [weak self] _ in
+                self?.loadServices()
+            })
+            .disposed(by: disposeBag)
+
+        loadServices()
+    }
 
     func setupInitialData() {
         guard !UserDefaults.standard.bool(forKey: initialDataLoadedKey) else { return }
@@ -42,10 +58,10 @@ class CoreDataManager {
         UserDefaults.standard.set(true, forKey: initialDataLoadedKey)
     }
 
-    func loadEntities() -> [ServiceType] {
+    func loadServices() {
         let fetchRequest: NSFetchRequest<ServiceType> = ServiceType.fetchRequest()
         do {
-            return try managedContext.fetch(fetchRequest)
+            servicesRelay.accept(try managedContext.fetch(fetchRequest))
         } catch {
             fatalError("Unable to fetch entities")
         }
@@ -72,5 +88,6 @@ class CoreDataManager {
         service.badge = badge.rawValue
         service.markerX = markerX
         service.markerY = markerY
+        service.lastRepairDistance = 0
     }
 }

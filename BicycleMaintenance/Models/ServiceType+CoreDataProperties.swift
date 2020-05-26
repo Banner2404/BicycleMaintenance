@@ -19,6 +19,7 @@ extension ServiceType {
 
     @NSManaged public var name: String!
     @NSManaged public var distance: Int64
+    @NSManaged public var lastRepairDistance: Int64
     @NSManaged public var image: String!
     @NSManaged public var badge: String!
     @NSManaged public var markerX: Double
@@ -26,6 +27,10 @@ extension ServiceType {
 
     var distanceInt: Int {
         Int(distance)
+    }
+
+    var lastRepairDistanceInt: Int {
+        Int(lastRepairDistance)
     }
 
     var markerPosition: CGPoint {

@@ -25,8 +25,6 @@ class DashboardViewController: UIViewController {
                 self?.reloadData(viewModels)
             })
             .disposed(by: disposeBag)
-        
-        viewModel.loadData()
     }
 
     private func reloadData(_ viewModels: [ServiceTypeViewModel]) {
@@ -62,4 +60,11 @@ extension DashboardViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
+extension DashboardViewController: UITableViewDelegate {
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        viewModel.viewModelForService(at: indexPath.row).repair()
+    }
+}

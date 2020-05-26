@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import CoreData
 
 class DashboardViewModel {
 
@@ -23,9 +24,9 @@ class DashboardViewModel {
     private let servicesRelay = BehaviorRelay<[ServiceTypeViewModel]>(value: [])
     private let disposeBag = DisposeBag()
 
-    func loadData() {
+    init() {
         Observable
-            .zip(loadServices().asObservable(), loadWorkouts().asObservable())
+            .combineLatest(CoreDataManager.shared.services, WorkoutDataManager.shared.distance)
             .map { services, distance in
                 return services
                     .map { service in
@@ -39,18 +40,5 @@ class DashboardViewModel {
 
     func viewModelForService(at index: Int) -> ServiceTypeViewModel {
         return servicesRelay.value[index]
-    }
-
-    private func loadServices() -> Single<[ServiceType]> {
-        return Single.just(CoreDataManager.shared.loadEntities())
-    }
-
-    private func loadWorkouts() -> Single<Int> {
-        return Single.create { observer in
-            WorkoutDataManager.shared.loadTotalDistance { distance in
-                observer(.success(distance ?? 0))
-            }
-            return Disposables.create()
-        }
     }
 }

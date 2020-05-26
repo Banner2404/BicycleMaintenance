@@ -49,12 +49,17 @@ class ServiceTypeViewModel {
     private let service: ServiceType
     private let totalDistance: Int
     private var distanceToRepair: Int {
-        max(service.distanceInt - totalDistance, 0)
+        max(service.distanceInt + service.lastRepairDistanceInt - totalDistance, 0)
     }
 
     init(service: ServiceType, totalDistance: Int) {
         self.service = service
         self.totalDistance = totalDistance
+    }
+
+    func repair() {
+        service.lastRepairDistance = Int64(totalDistance)
+        CoreDataManager.shared.saveContext()
     }
 
     enum Condition {
