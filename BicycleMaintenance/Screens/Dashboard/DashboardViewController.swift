@@ -36,6 +36,18 @@ class DashboardViewController: UIViewController {
         let markers = viewModels.map { BikeView.Marker(position: $0.markerPosition, condition: $0.condition) }
         bikeView.setup(markers: markers)
     }
+
+    private func showRepairAlert(forRow row: Int) {
+        let alert = UIAlertController(title: "Repair this part?", message: nil, preferredStyle: .alert)
+        let repairAction = UIAlertAction(title: "Repair", style: .default) { [weak self] _ in
+            self?.viewModel.viewModelForService(at: row).repair()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(repairAction)
+        alert.addAction(cancelAction)
+        alert.preferredAction = repairAction
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -65,6 +77,6 @@ extension DashboardViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        viewModel.viewModelForService(at: indexPath.row).repair()
+        showRepairAlert(forRow: indexPath.row)
     }
 }
