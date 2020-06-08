@@ -20,7 +20,12 @@ class CoreDataManager {
         return servicesRelay.asObservable()
     }
 
+    var workouts: Observable<[Workout]> {
+        return workoutsRelay.asObservable()
+    }
+
     private let servicesRelay = BehaviorRelay<[ServiceType]>(value: [])
+    private let workoutsRelay = BehaviorRelay<[Workout]>(value: [])
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "BicycleMaintenance")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -39,10 +44,12 @@ class CoreDataManager {
         NotificationCenter.default.rx.notification(.NSManagedObjectContextObjectsDidChange)
             .subscribe(onNext: { [weak self] _ in
                 self?.loadServices()
+                self?.loadWorkouts()
             })
             .disposed(by: disposeBag)
 
         loadServices()
+        loadWorkouts()
     }
 
     func setupInitialData() {
@@ -64,7 +71,17 @@ class CoreDataManager {
         do {
             servicesRelay.accept(try managedContext.fetch(fetchRequest))
         } catch {
-            fatalError("Unable to fetch entities")
+            fatalError("Unable to fetch services")
+        }
+    }
+
+    func loadWorkouts() {
+        let fetchRequest: NSFetchRequest<Workout> = Workout.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
+        do {
+            workoutsRelay.accept(try managedContext.fetch(fetchRequest))
+        } catch {
+            fatalError("Unable to fetch workouts")
         }
     }
 
@@ -102,6 +119,7 @@ class CoreDataManager {
         let workoutObject = Workout(context: managedContext)
         workoutObject.distance = Int64(distance)
         workoutObject.uuid = workout.uuid
+        workoutObject.date = workout.startDate
         return workoutObject
     }
 }

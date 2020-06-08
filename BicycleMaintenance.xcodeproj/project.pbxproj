@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		C199F06726DDB85A565BA1EF /* Pods_BicycleMaintenance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F490970B46335EF1E3D5AB14 /* Pods_BicycleMaintenance.framework */; };
+		D13CA69D248E729B00664CBA /* WorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13CA69C248E729B00664CBA /* WorkoutsViewController.swift */; };
+		D13CA69F248E73BF00664CBA /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13CA69E248E73BF00664CBA /* WorkoutTableViewCell.swift */; };
+		D13CA6A1248E751A00664CBA /* WorkoutsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13CA6A0248E751A00664CBA /* WorkoutsViewModel.swift */; };
+		D13CA6A3248E774400664CBA /* WorkoutRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13CA6A2248E774400664CBA /* WorkoutRecordViewModel.swift */; };
+		D13CA6A5248E777E00664CBA /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13CA6A4248E777E00664CBA /* DateFormatter.swift */; };
 		D1482F4324741E7200CC99BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1482F4224741E7200CC99BF /* AppDelegate.swift */; };
 		D1482F4524741E7200CC99BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1482F4424741E7200CC99BF /* SceneDelegate.swift */; };
 		D1482F4724741E7200CC99BF /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1482F4624741E7200CC99BF /* DashboardViewController.swift */; };
@@ -38,6 +43,11 @@
 
 /* Begin PBXFileReference section */
 		0B591C4FCE85904C8C22BC58 /* Pods-BicycleMaintenance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BicycleMaintenance.debug.xcconfig"; path = "Target Support Files/Pods-BicycleMaintenance/Pods-BicycleMaintenance.debug.xcconfig"; sourceTree = "<group>"; };
+		D13CA69C248E729B00664CBA /* WorkoutsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsViewController.swift; sourceTree = "<group>"; };
+		D13CA69E248E73BF00664CBA /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
+		D13CA6A0248E751A00664CBA /* WorkoutsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsViewModel.swift; sourceTree = "<group>"; };
+		D13CA6A2248E774400664CBA /* WorkoutRecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRecordViewModel.swift; sourceTree = "<group>"; };
+		D13CA6A4248E777E00664CBA /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		D1482F3F24741E7200CC99BF /* BicycleMaintenance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BicycleMaintenance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1482F4224741E7200CC99BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1482F4424741E7200CC99BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +101,17 @@
 				D72E966150AA0011244D62E2 /* Pods-BicycleMaintenance.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D13CA69B248E728000664CBA /* Workouts */ = {
+			isa = PBXGroup;
+			children = (
+				D13CA69C248E729B00664CBA /* WorkoutsViewController.swift */,
+				D13CA6A0248E751A00664CBA /* WorkoutsViewModel.swift */,
+				D13CA69E248E73BF00664CBA /* WorkoutTableViewCell.swift */,
+				D13CA6A2248E774400664CBA /* WorkoutRecordViewModel.swift */,
+			);
+			path = Workouts;
 			sourceTree = "<group>";
 		};
 		D1482F3624741E7200CC99BF = {
@@ -148,6 +169,7 @@
 				D1C206B0247A67C500C1926D /* UITableViewCell.swift */,
 				D1A3282D247A7DE000A32FE9 /* UIColor.swift */,
 				D1A32835247A8C4000A32FE9 /* UIView.swift */,
+				D13CA6A4248E777E00664CBA /* DateFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -155,6 +177,7 @@
 		D1C206B2247A680800C1926D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				D13CA69B248E728000664CBA /* Workouts */,
 				D1C206B3247A681900C1926D /* Dashboard */,
 			);
 			path = Screens;
@@ -309,13 +332,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D13CA6A5248E777E00664CBA /* DateFormatter.swift in Sources */,
 				D1A32832247A8B8F00A32FE9 /* ServiceBadgeView.swift in Sources */,
+				D13CA69D248E729B00664CBA /* WorkoutsViewController.swift in Sources */,
 				D1A3282C247A71C400A32FE9 /* ServiceTypeViewModel.swift in Sources */,
 				D1A32830247A80C000A32FE9 /* HealthBar.swift in Sources */,
 				D1482F4724741E7200CC99BF /* DashboardViewController.swift in Sources */,
 				D1675552247A5F26005A3586 /* ServiceType+CoreDataClass.swift in Sources */,
 				D1482F4D24741E7200CC99BF /* BicycleMaintenance.xcdatamodeld in Sources */,
 				D1C206B6247A684800C1926D /* ServiceTypeTableViewCell.swift in Sources */,
+				D13CA6A1248E751A00664CBA /* WorkoutsViewModel.swift in Sources */,
 				D17BE91E248E6FAB0081F3DE /* Workout+CoreDataClass.swift in Sources */,
 				D17BE91F248E6FAB0081F3DE /* Workout+CoreDataProperties.swift in Sources */,
 				D1A32838247AAEF600A32FE9 /* ServiceMarkerView.swift in Sources */,
@@ -324,9 +350,11 @@
 				D1C206B1247A67C500C1926D /* UITableViewCell.swift in Sources */,
 				D1675553247A5F26005A3586 /* ServiceType+CoreDataProperties.swift in Sources */,
 				D1A32834247A8C0900A32FE9 /* ServiceImageView.swift in Sources */,
+				D13CA6A3248E774400664CBA /* WorkoutRecordViewModel.swift in Sources */,
 				D1482F4324741E7200CC99BF /* AppDelegate.swift in Sources */,
 				D1C206AF247A67A100C1926D /* UITableView.swift in Sources */,
 				D1A3283A247AAFBF00A32FE9 /* BikeView.swift in Sources */,
+				D13CA69F248E73BF00664CBA /* WorkoutTableViewCell.swift in Sources */,
 				D1675556247A5F57005A3586 /* CoreDataManager.swift in Sources */,
 				D1482F4524741E7200CC99BF /* SceneDelegate.swift in Sources */,
 				D1A32836247A8C4000A32FE9 /* UIView.swift in Sources */,

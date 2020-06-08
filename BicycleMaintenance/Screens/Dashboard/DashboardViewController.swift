@@ -60,7 +60,9 @@ class DashboardViewController: UIViewController {
 
     @IBAction private func moreButtonTap(_ sender: UIButton) {
         let sheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let workoutsAction = UIAlertAction(title: "Workouts", style: .default, handler: nil)
+        let workoutsAction = UIAlertAction(title: "Workouts", style: .default) { _ in
+            self.performSegue(withIdentifier: "workoutsSegue", sender: nil)
+        }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         sheet.addAction(workoutsAction)
         sheet.addAction(cancelAction)

@@ -10,11 +10,12 @@
         <attribute name="name" attributeType="String"/>
     </entity>
     <entity name="Workout" representedClassName="Workout" syncable="YES">
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="distance" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
     </entity>
     <elements>
         <element name="ServiceType" positionX="-63" positionY="-18" width="128" height="148"/>
-        <element name="Workout" positionX="-63" positionY="36" width="128" height="73"/>
+        <element name="Workout" positionX="-63" positionY="36" width="128" height="88"/>
     </elements>
 </model>
