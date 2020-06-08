@@ -86,9 +86,8 @@ class CoreDataManager {
     }
 
     func update(_ workouts: [HKWorkout]) {
-//        let workoutObjects = workouts.map { createWorkout(from: $0) }
-//        print("Updating: ", workoutObjects)
-//        saveContext()
+        _ = workouts.map { createWorkout(from: $0) }
+        saveContext()
     }
     
     func saveContext() {

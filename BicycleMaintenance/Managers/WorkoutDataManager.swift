@@ -14,12 +14,9 @@ import RxCocoa
 class WorkoutDataManager {
 
     static let shared = WorkoutDataManager()
-    var distance: Observable<Int> {
-        return distanceSubject.asObservable()
-    }
 
-    private let distanceSubject = ReplaySubject<Int>.create(bufferSize: 1)
     private let disposeBag = DisposeBag()
+    private let anchorKey = "QueryAnchorKey"
 
     private init() {
         NotificationCenter.default.rx.notification(UIApplication.didBecomeActiveNotification)
@@ -59,7 +56,12 @@ class WorkoutDataManager {
     private func loadDistanceData() {
         print("Load distance")
         let predicate = HKQuery.predicateForWorkouts(with: .cycling)
-        let query = HKSampleQuery(sampleType: .workoutType(), predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { [weak self] query, samples, error in
+        let query = HKAnchoredObjectQuery(
+            type: .workoutType(),
+            predicate: predicate,
+            anchor: restoreAnchor(),
+            limit: HKObjectQueryNoLimit
+        ) { [weak self] query, samples, deletedObjects, anchor, error in
             if let error = error {
                 print(error)
             }
@@ -67,15 +69,25 @@ class WorkoutDataManager {
                 print("Unable to get workouts")
                 return
             }
-            let totalDistance = workouts.reduce(0) { sum, workout in
-                return sum + (workout.totalDistance?.doubleValue(for: .meterUnit(with: .kilo)) ?? 0)
-            }
+            print("new samples \(workouts.count)")
+            // TODO: handle deleted workouts
             CoreDataManager.shared.update(workouts)
-            DispatchQueue.main.async {
-                self?.distanceSubject.on(.next(Int(totalDistance)))
-                //self?.distanceSubject.on(.next(3715))
+            if let anchor = anchor {
+                self?.save(anchor: anchor)
             }
         }
         HKHealthStore().execute(query)
+    }
+
+    private func save(anchor: HKQueryAnchor) {
+        guard let data = try? NSKeyedArchiver.archivedData(withRootObject: anchor, requiringSecureCoding: false) else {
+            return
+        }
+        UserDefaults.standard.set(data, forKey: anchorKey)
+    }
+
+    private func restoreAnchor() -> HKQueryAnchor? {
+        guard let data = UserDefaults.standard.data(forKey: anchorKey) else { return nil }
+        return try? NSKeyedUnarchiver.unarchivedObject(ofClass: HKQueryAnchor.self, from: data)
     }
 }
