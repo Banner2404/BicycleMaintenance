@@ -66,6 +66,7 @@ class WorkoutDataManager {
             }
             DispatchQueue.main.async {
                 self?.distanceSubject.on(.next(Int(totalDistance)))
+                //self?.distanceSubject.on(.next(3715))
             }
         }
         HKHealthStore().execute(query)

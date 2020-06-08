@@ -18,10 +18,6 @@ extension UIColor {
         UIColor.green
     }
 
-    static var conditionWarning: UIColor {
-        UIColor.yellow
-    }
-
     static var conditionBad: UIColor {
         UIColor.red
     }

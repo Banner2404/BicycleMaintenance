@@ -64,14 +64,11 @@ class ServiceTypeViewModel {
 
     enum Condition {
         case good
-        case warning
         case bad
 
         init(health: Double) {
-            if health > 0.66 {
+            if health > 0.33 {
                 self = .good
-            } else if health > 0.33 {
-                self = .warning
             } else {
                 self = .bad
             }
@@ -81,8 +78,6 @@ class ServiceTypeViewModel {
             switch self {
             case .good:
                 return .conditionGood
-            case .warning:
-                return .conditionWarning
             case .bad:
                 return .conditionBad
             }
