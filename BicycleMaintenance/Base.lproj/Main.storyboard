@@ -99,6 +99,20 @@
                                     <constraint firstAttribute="width" secondItem="CPD-on-LrZ" secondAttribute="height" multiplier="414:317" id="Hej-HN-Kdd"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="h3H-M8-5ak">
+                                <rect key="frame" x="169.5" y="597.5" width="75" height="62.5"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="TOe-YQ-4Cy">
+                                        <rect key="frame" x="19" y="0.0" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ms-Vr-A27">
+                                        <rect key="frame" x="0.0" y="42" width="75" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -106,7 +120,9 @@
                             <constraint firstItem="CPD-on-LrZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bd0-bc-rR0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zbe-db-wpA" secondAttribute="trailing" id="Mfc-0F-5QX"/>
                             <constraint firstAttribute="bottom" secondItem="Zbe-db-wpA" secondAttribute="bottom" id="QIa-OE-Yqz"/>
+                            <constraint firstItem="h3H-M8-5ak" firstAttribute="centerX" secondItem="Zbe-db-wpA" secondAttribute="centerX" id="TIQ-QJ-VhI"/>
                             <constraint firstItem="CPD-on-LrZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rBc-NX-sei"/>
+                            <constraint firstItem="h3H-M8-5ak" firstAttribute="centerY" secondItem="Zbe-db-wpA" secondAttribute="centerY" id="rp0-dp-bAv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CPD-on-LrZ" secondAttribute="trailing" id="rqH-lK-etf"/>
                             <constraint firstItem="Zbe-db-wpA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ykF-8L-Mm5"/>
                         </constraints>
@@ -114,6 +130,7 @@
                     </view>
                     <connections>
                         <outlet property="bikeView" destination="CPD-on-LrZ" id="08c-RD-bXi"/>
+                        <outlet property="loadingView" destination="h3H-M8-5ak" id="uIK-cb-ifi"/>
                         <outlet property="tableView" destination="Zbe-db-wpA" id="UlE-we-BKV"/>
                     </connections>
                 </viewController>

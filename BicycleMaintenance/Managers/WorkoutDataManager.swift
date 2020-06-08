@@ -19,9 +19,14 @@ class WorkoutDataManager {
     }
 
     private let distanceSubject = ReplaySubject<Int>.create(bufferSize: 1)
+    private let disposeBag = DisposeBag()
 
     private init() {
-        loadTotalDistance()
+        NotificationCenter.default.rx.notification(UIApplication.didBecomeActiveNotification)
+            .bind { [weak self] _ in
+                self?.loadTotalDistance()
+            }
+            .disposed(by: disposeBag)
     }
 
     func authorizeHealthKit(completion: @escaping (Bool) -> Void) {
@@ -52,6 +57,7 @@ class WorkoutDataManager {
     }
 
     private func loadDistanceData() {
+        print("Load distance")
         let predicate = HKQuery.predicateForWorkouts(with: .cycling)
         let query = HKSampleQuery(sampleType: .workoutType(), predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { [weak self] query, samples, error in
             if let error = error {

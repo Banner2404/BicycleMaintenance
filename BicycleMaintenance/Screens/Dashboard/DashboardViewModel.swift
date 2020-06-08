@@ -21,6 +21,10 @@ class DashboardViewModel {
         servicesRelay.value.count
     }
 
+    var isLoading: Driver<Bool> {
+        loadingRelay.asDriver()
+    }
+    private let loadingRelay = BehaviorRelay<Bool>(value: true)
     private let servicesRelay = BehaviorRelay<[ServiceTypeViewModel]>(value: [])
     private let disposeBag = DisposeBag()
 
@@ -35,6 +39,11 @@ class DashboardViewModel {
                     .sorted { $0.health < $1.health }
             }
             .bind(to: servicesRelay)
+            .disposed(by: disposeBag)
+        servicesRelay
+            .skip(1)
+            .map { _ in return false }
+            .bind(to: loadingRelay)
             .disposed(by: disposeBag)
     }
 
