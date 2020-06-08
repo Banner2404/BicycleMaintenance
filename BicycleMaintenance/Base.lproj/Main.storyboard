@@ -113,6 +113,13 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKc-y5-r5Y">
+                                <rect key="frame" x="358" y="56" width="44" height="44"/>
+                                <state key="normal" image="more_icon"/>
+                                <connections>
+                                    <action selector="moreButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2bv-lo-mSy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -121,6 +128,8 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zbe-db-wpA" secondAttribute="trailing" id="Mfc-0F-5QX"/>
                             <constraint firstAttribute="bottom" secondItem="Zbe-db-wpA" secondAttribute="bottom" id="QIa-OE-Yqz"/>
                             <constraint firstItem="h3H-M8-5ak" firstAttribute="centerX" secondItem="Zbe-db-wpA" secondAttribute="centerX" id="TIQ-QJ-VhI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vKc-y5-r5Y" secondAttribute="trailing" constant="12" id="iQh-jK-qAM"/>
+                            <constraint firstItem="vKc-y5-r5Y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="kDt-0X-W3h"/>
                             <constraint firstItem="CPD-on-LrZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rBc-NX-sei"/>
                             <constraint firstItem="h3H-M8-5ak" firstAttribute="centerY" secondItem="Zbe-db-wpA" secondAttribute="centerY" id="rp0-dp-bAv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CPD-on-LrZ" secondAttribute="trailing" id="rqH-lK-etf"/>
@@ -139,4 +148,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="105.80357142857143"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="more_icon" width="44" height="44"/>
+    </resources>
 </document>

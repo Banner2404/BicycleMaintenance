@@ -57,6 +57,16 @@ class DashboardViewController: UIViewController {
         alert.preferredAction = repairAction
         present(alert, animated: true, completion: nil)
     }
+
+    @IBAction private func moreButtonTap(_ sender: UIButton) {
+        let sheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let workoutsAction = UIAlertAction(title: "Workouts", style: .default, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        sheet.addAction(workoutsAction)
+        sheet.addAction(cancelAction)
+        sheet.popoverPresentationController?.sourceView = sender
+        present(sheet, animated: true, completion: nil)
+    }
 }
 
 // MARK: - UITableViewDataSource

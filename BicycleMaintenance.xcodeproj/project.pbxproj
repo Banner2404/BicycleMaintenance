@@ -18,6 +18,8 @@
 		D1675552247A5F26005A3586 /* ServiceType+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1675550247A5F26005A3586 /* ServiceType+CoreDataClass.swift */; };
 		D1675553247A5F26005A3586 /* ServiceType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1675551247A5F26005A3586 /* ServiceType+CoreDataProperties.swift */; };
 		D1675556247A5F57005A3586 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1675555247A5F57005A3586 /* CoreDataManager.swift */; };
+		D17BE91E248E6FAB0081F3DE /* Workout+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BE91C248E6FAB0081F3DE /* Workout+CoreDataClass.swift */; };
+		D17BE91F248E6FAB0081F3DE /* Workout+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BE91D248E6FAB0081F3DE /* Workout+CoreDataProperties.swift */; };
 		D1A3282C247A71C400A32FE9 /* ServiceTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3282B247A71C400A32FE9 /* ServiceTypeViewModel.swift */; };
 		D1A3282E247A7DE000A32FE9 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3282D247A7DE000A32FE9 /* UIColor.swift */; };
 		D1A32830247A80C000A32FE9 /* HealthBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3282F247A80C000A32FE9 /* HealthBar.swift */; };
@@ -48,6 +50,8 @@
 		D1675550247A5F26005A3586 /* ServiceType+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServiceType+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D1675551247A5F26005A3586 /* ServiceType+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServiceType+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D1675555247A5F57005A3586 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		D17BE91C248E6FAB0081F3DE /* Workout+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Workout+CoreDataClass.swift"; path = "/Users/banner/Desktop/BicycleMaintenance/BicycleMaintenance/Models/Workout+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		D17BE91D248E6FAB0081F3DE /* Workout+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Workout+CoreDataProperties.swift"; path = "/Users/banner/Desktop/BicycleMaintenance/BicycleMaintenance/Models/Workout+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		D1A3282B247A71C400A32FE9 /* ServiceTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTypeViewModel.swift; sourceTree = "<group>"; };
 		D1A3282D247A7DE000A32FE9 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		D1A3282F247A80C000A32FE9 /* HealthBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthBar.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 			children = (
 				D1675550247A5F26005A3586 /* ServiceType+CoreDataClass.swift */,
 				D1675551247A5F26005A3586 /* ServiceType+CoreDataProperties.swift */,
+				D17BE91C248E6FAB0081F3DE /* Workout+CoreDataClass.swift */,
+				D17BE91D248E6FAB0081F3DE /* Workout+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -310,6 +316,8 @@
 				D1675552247A5F26005A3586 /* ServiceType+CoreDataClass.swift in Sources */,
 				D1482F4D24741E7200CC99BF /* BicycleMaintenance.xcdatamodeld in Sources */,
 				D1C206B6247A684800C1926D /* ServiceTypeTableViewCell.swift in Sources */,
+				D17BE91E248E6FAB0081F3DE /* Workout+CoreDataClass.swift in Sources */,
+				D17BE91F248E6FAB0081F3DE /* Workout+CoreDataProperties.swift in Sources */,
 				D1A32838247AAEF600A32FE9 /* ServiceMarkerView.swift in Sources */,
 				D1C206AC247A661A00C1926D /* DashboardViewModel.swift in Sources */,
 				D1D16CFA2479A90200A015C9 /* WorkoutDataManager.swift in Sources */,

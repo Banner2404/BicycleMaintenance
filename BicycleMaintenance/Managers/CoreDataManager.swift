@@ -10,6 +10,7 @@ import Foundation
 import CoreData
 import RxSwift
 import RxCocoa
+import HealthKit
 
 class CoreDataManager {
 
@@ -65,7 +66,12 @@ class CoreDataManager {
         } catch {
             fatalError("Unable to fetch entities")
         }
+    }
 
+    func update(_ workouts: [HKWorkout]) {
+//        let workoutObjects = workouts.map { createWorkout(from: $0) }
+//        print("Updating: ", workoutObjects)
+//        saveContext()
     }
     
     func saveContext() {
@@ -81,7 +87,7 @@ class CoreDataManager {
 
     private func setupInitialService(name: String, distance: Int, image: ServiceType.Image,
                                      badge: ServiceType.Badge, markerX: Double, markerY: Double) {
-        let service = ServiceType(context: persistentContainer.viewContext)
+        let service = ServiceType(context: managedContext)
         service.name = name
         service.distance = Int64(distance)
         service.image = image.rawValue
@@ -90,4 +96,13 @@ class CoreDataManager {
         service.markerY = markerY
         service.lastRepairDistance = 0
     }
+
+    private func createWorkout(from workout: HKWorkout) -> Workout? {
+        guard let distance = workout.totalDistance?.doubleValue(for: .meterUnit(with: .kilo)) else { return nil }
+        let workoutObject = Workout(context: managedContext)
+        workoutObject.distance = Int64(distance)
+        workoutObject.uuid = workout.uuid
+        return workoutObject
+    }
 }
+
