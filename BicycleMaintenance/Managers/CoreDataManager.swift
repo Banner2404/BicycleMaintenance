@@ -119,6 +119,7 @@ class CoreDataManager {
         workoutObject.distance = Int64(distance)
         workoutObject.uuid = workout.uuid
         workoutObject.date = workout.startDate
+        workoutObject.isHidden = false
         return workoutObject
     }
 }

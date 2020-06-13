@@ -30,7 +30,10 @@ class DashboardViewModel {
     private let disposeBag = DisposeBag()
     private var totalDistance: Observable<Int> {
         CoreDataManager.shared.workouts
-            .map { $0.reduce(0, { $0 + Int($1.distance) })}
+            .map { workouts in
+                let activeWorkouts = workouts.filter { !$0.isHidden }
+                return activeWorkouts.reduce(0, { $0 + Int($1.distance) })
+            }
     }
 
     init() {

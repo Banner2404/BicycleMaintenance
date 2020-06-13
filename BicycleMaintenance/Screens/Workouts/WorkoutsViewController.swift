@@ -40,6 +40,8 @@ extension WorkoutsViewController: UITableViewDataSource {
         let workout = viewModel.viewModelForWorkout(at: indexPath.row)
         cell.textLabel?.text = workout.name
         cell.detailTextLabel?.text = workout.distance
+        cell.textLabel?.alpha = workout.isHidden ? 0.5 : 1.0
+        cell.detailTextLabel?.alpha = workout.isHidden ? 0.5 : 1.0
         return cell
     }
 }
@@ -49,5 +51,19 @@ extension WorkoutsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+
+    func tableView(
+        _ tableView: UITableView,
+        trailingSwipeActionsConfigurationForRowAt
+        indexPath: IndexPath
+    ) -> UISwipeActionsConfiguration? {
+        let viewModel = self.viewModel.viewModelForWorkout(at: indexPath.row)
+        let title = viewModel.isHidden ? "Unarchive" : "Archive"
+        let hideAction = UIContextualAction(style: .normal, title: title) { action, view, completion in
+            viewModel.toggleHide()
+            completion(true)
+        }
+        return UISwipeActionsConfiguration(actions: [hideAction])
     }
 }

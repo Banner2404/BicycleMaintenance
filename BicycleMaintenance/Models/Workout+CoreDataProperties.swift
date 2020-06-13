@@ -19,5 +19,6 @@ extension Workout {
     @NSManaged public var distance: Int64
     @NSManaged public var uuid: UUID
     @NSManaged public var date: Date
+    @NSManaged public var isHidden: Bool
 
 }

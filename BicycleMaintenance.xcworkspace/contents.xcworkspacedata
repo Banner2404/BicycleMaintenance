@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/banner/Desktop/BicycleMaintenance/BicycleMaintenance/Models/Workout+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/banner/Desktop/BicycleMaintenance/BicycleMaintenance/Models/Workout+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
       location = "group:BicycleMaintenance.xcodeproj">
    </FileRef>
    <FileRef

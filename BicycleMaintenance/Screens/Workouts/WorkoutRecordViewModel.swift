@@ -19,10 +19,19 @@ class WorkoutRecordViewModel {
     var distance: String {
         return "\(workout.distance) km"
     }
+
+    var isHidden: Bool {
+        return workout.isHidden
+    }
     
     private let workout: Workout
 
     init(workout: Workout) {
         self.workout = workout
+    }
+
+    func toggleHide() {
+        workout.isHidden.toggle()
+        CoreDataManager.shared.saveContext()
     }
 }
