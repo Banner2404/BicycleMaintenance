@@ -23,7 +23,7 @@ class ServiceTypeViewModel {
     }
 
     var health: Double {
-        return Double(distanceToRepair) / Double(service.distanceInt)
+        return (Double(distanceToRepair) / Double(service.distanceInt)).clamped(to: 0...1)
     }
 
     var image: UIImage? {

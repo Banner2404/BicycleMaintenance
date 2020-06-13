@@ -23,6 +23,7 @@
 		D1675552247A5F26005A3586 /* ServiceType+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1675550247A5F26005A3586 /* ServiceType+CoreDataClass.swift */; };
 		D1675553247A5F26005A3586 /* ServiceType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1675551247A5F26005A3586 /* ServiceType+CoreDataProperties.swift */; };
 		D1675556247A5F57005A3586 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1675555247A5F57005A3586 /* CoreDataManager.swift */; };
+		D167DB572494B5120003280A /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D167DB562494B5120003280A /* Comparable.swift */; };
 		D17BE91E248E6FAB0081F3DE /* Workout+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BE91C248E6FAB0081F3DE /* Workout+CoreDataClass.swift */; };
 		D17BE91F248E6FAB0081F3DE /* Workout+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BE91D248E6FAB0081F3DE /* Workout+CoreDataProperties.swift */; };
 		D1A3282C247A71C400A32FE9 /* ServiceTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3282B247A71C400A32FE9 /* ServiceTypeViewModel.swift */; };
@@ -60,6 +61,7 @@
 		D1675550247A5F26005A3586 /* ServiceType+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServiceType+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D1675551247A5F26005A3586 /* ServiceType+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServiceType+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D1675555247A5F57005A3586 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		D167DB562494B5120003280A /* Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comparable.swift; sourceTree = "<group>"; };
 		D17BE91C248E6FAB0081F3DE /* Workout+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Workout+CoreDataClass.swift"; path = "/Users/banner/Desktop/BicycleMaintenance/BicycleMaintenance/Models/Workout+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		D17BE91D248E6FAB0081F3DE /* Workout+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Workout+CoreDataProperties.swift"; path = "/Users/banner/Desktop/BicycleMaintenance/BicycleMaintenance/Models/Workout+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		D1A3282B247A71C400A32FE9 /* ServiceTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTypeViewModel.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				D1A3282D247A7DE000A32FE9 /* UIColor.swift */,
 				D1A32835247A8C4000A32FE9 /* UIView.swift */,
 				D13CA6A4248E777E00664CBA /* DateFormatter.swift */,
+				D167DB562494B5120003280A /* Comparable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				D1675553247A5F26005A3586 /* ServiceType+CoreDataProperties.swift in Sources */,
 				D1A32834247A8C0900A32FE9 /* ServiceImageView.swift in Sources */,
 				D13CA6A3248E774400664CBA /* WorkoutRecordViewModel.swift in Sources */,
+				D167DB572494B5120003280A /* Comparable.swift in Sources */,
 				D1482F4324741E7200CC99BF /* AppDelegate.swift in Sources */,
 				D1C206AF247A67A100C1926D /* UITableView.swift in Sources */,
 				D1A3283A247AAFBF00A32FE9 /* BikeView.swift in Sources */,
