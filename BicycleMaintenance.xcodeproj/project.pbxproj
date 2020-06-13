@@ -24,6 +24,11 @@
 		D1675553247A5F26005A3586 /* ServiceType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1675551247A5F26005A3586 /* ServiceType+CoreDataProperties.swift */; };
 		D1675556247A5F57005A3586 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1675555247A5F57005A3586 /* CoreDataManager.swift */; };
 		D167DB572494B5120003280A /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D167DB562494B5120003280A /* Comparable.swift */; };
+		D167DB5A2494B5E90003280A /* OnboardingHealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D167DB592494B5E90003280A /* OnboardingHealthViewController.swift */; };
+		D167DB5C2494CD160003280A /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D167DB5B2494CD160003280A /* OnboardingButton.swift */; };
+		D167DB5E2494CDB10003280A /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D167DB5D2494CDB10003280A /* UIImage.swift */; };
+		D167DB602494CE030003280A /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D167DB5F2494CE030003280A /* UIEdgeInsets.swift */; };
+		D167DB622494D2970003280A /* OnboardingHealthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D167DB612494D2970003280A /* OnboardingHealthViewModel.swift */; };
 		D17BE91E248E6FAB0081F3DE /* Workout+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BE91C248E6FAB0081F3DE /* Workout+CoreDataClass.swift */; };
 		D17BE91F248E6FAB0081F3DE /* Workout+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BE91D248E6FAB0081F3DE /* Workout+CoreDataProperties.swift */; };
 		D1A3282C247A71C400A32FE9 /* ServiceTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3282B247A71C400A32FE9 /* ServiceTypeViewModel.swift */; };
@@ -62,6 +67,11 @@
 		D1675551247A5F26005A3586 /* ServiceType+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServiceType+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D1675555247A5F57005A3586 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D167DB562494B5120003280A /* Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comparable.swift; sourceTree = "<group>"; };
+		D167DB592494B5E90003280A /* OnboardingHealthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingHealthViewController.swift; sourceTree = "<group>"; };
+		D167DB5B2494CD160003280A /* OnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
+		D167DB5D2494CDB10003280A /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		D167DB5F2494CE030003280A /* UIEdgeInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
+		D167DB612494D2970003280A /* OnboardingHealthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingHealthViewModel.swift; sourceTree = "<group>"; };
 		D17BE91C248E6FAB0081F3DE /* Workout+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Workout+CoreDataClass.swift"; path = "/Users/banner/Desktop/BicycleMaintenance/BicycleMaintenance/Models/Workout+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		D17BE91D248E6FAB0081F3DE /* Workout+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Workout+CoreDataProperties.swift"; path = "/Users/banner/Desktop/BicycleMaintenance/BicycleMaintenance/Models/Workout+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		D1A3282B247A71C400A32FE9 /* ServiceTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTypeViewModel.swift; sourceTree = "<group>"; };
@@ -164,6 +174,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		D167DB582494B5D20003280A /* Onboarding health */ = {
+			isa = PBXGroup;
+			children = (
+				D167DB592494B5E90003280A /* OnboardingHealthViewController.swift */,
+				D167DB612494D2970003280A /* OnboardingHealthViewModel.swift */,
+				D167DB5B2494CD160003280A /* OnboardingButton.swift */,
+			);
+			path = "Onboarding health";
+			sourceTree = "<group>";
+		};
 		D1C206AD247A677A00C1926D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,8 +191,10 @@
 				D1C206B0247A67C500C1926D /* UITableViewCell.swift */,
 				D1A3282D247A7DE000A32FE9 /* UIColor.swift */,
 				D1A32835247A8C4000A32FE9 /* UIView.swift */,
+				D167DB5D2494CDB10003280A /* UIImage.swift */,
 				D13CA6A4248E777E00664CBA /* DateFormatter.swift */,
 				D167DB562494B5120003280A /* Comparable.swift */,
+				D167DB5F2494CE030003280A /* UIEdgeInsets.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -180,6 +202,7 @@
 		D1C206B2247A680800C1926D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				D167DB582494B5D20003280A /* Onboarding health */,
 				D13CA69B248E728000664CBA /* Workouts */,
 				D1C206B3247A681900C1926D /* Dashboard */,
 			);
@@ -337,6 +360,7 @@
 			files = (
 				D13CA6A5248E777E00664CBA /* DateFormatter.swift in Sources */,
 				D1A32832247A8B8F00A32FE9 /* ServiceBadgeView.swift in Sources */,
+				D167DB622494D2970003280A /* OnboardingHealthViewModel.swift in Sources */,
 				D13CA69D248E729B00664CBA /* WorkoutsViewController.swift in Sources */,
 				D1A3282C247A71C400A32FE9 /* ServiceTypeViewModel.swift in Sources */,
 				D1A32830247A80C000A32FE9 /* HealthBar.swift in Sources */,
@@ -345,8 +369,10 @@
 				D1482F4D24741E7200CC99BF /* BicycleMaintenance.xcdatamodeld in Sources */,
 				D1C206B6247A684800C1926D /* ServiceTypeTableViewCell.swift in Sources */,
 				D13CA6A1248E751A00664CBA /* WorkoutsViewModel.swift in Sources */,
+				D167DB5C2494CD160003280A /* OnboardingButton.swift in Sources */,
 				D17BE91E248E6FAB0081F3DE /* Workout+CoreDataClass.swift in Sources */,
 				D17BE91F248E6FAB0081F3DE /* Workout+CoreDataProperties.swift in Sources */,
+				D167DB5E2494CDB10003280A /* UIImage.swift in Sources */,
 				D1A32838247AAEF600A32FE9 /* ServiceMarkerView.swift in Sources */,
 				D1C206AC247A661A00C1926D /* DashboardViewModel.swift in Sources */,
 				D1D16CFA2479A90200A015C9 /* WorkoutDataManager.swift in Sources */,
@@ -354,6 +380,8 @@
 				D1675553247A5F26005A3586 /* ServiceType+CoreDataProperties.swift in Sources */,
 				D1A32834247A8C0900A32FE9 /* ServiceImageView.swift in Sources */,
 				D13CA6A3248E774400664CBA /* WorkoutRecordViewModel.swift in Sources */,
+				D167DB5A2494B5E90003280A /* OnboardingHealthViewController.swift in Sources */,
+				D167DB602494CE030003280A /* UIEdgeInsets.swift in Sources */,
 				D167DB572494B5120003280A /* Comparable.swift in Sources */,
 				D1482F4324741E7200CC99BF /* AppDelegate.swift in Sources */,
 				D1C206AF247A67A100C1926D /* UITableView.swift in Sources */,

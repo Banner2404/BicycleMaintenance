@@ -15,18 +15,24 @@ class WorkoutDataManager {
 
     static let shared = WorkoutDataManager()
 
+    var canRequestAuthorization: Bool {
+        print(HKHealthStore().authorizationStatus(for: .workoutType()).rawValue)
+        return HKHealthStore().authorizationStatus(for: .workoutType()) == .notDetermined
+    }
+
     private let disposeBag = DisposeBag()
     private let anchorKey = "QueryAnchorKey"
 
     private init() {
         NotificationCenter.default.rx.notification(UIApplication.didBecomeActiveNotification)
             .bind { [weak self] _ in
-                self?.loadTotalDistance()
+                self?.loadWorkoutData()
             }
             .disposed(by: disposeBag)
     }
 
     func authorizeHealthKit(completion: @escaping (Bool) -> Void) {
+        print("Authorize health kit")
         guard HKHealthStore.isHealthDataAvailable() else {
             // TODO: change UI
             print("Health data is not available")
@@ -37,23 +43,18 @@ class WorkoutDataManager {
         let workoutType = HKObjectType.workoutType()
         let dataTypes = Set([workoutType])
         HKHealthStore().requestAuthorization(toShare: nil, read: dataTypes) { (success, error) in
+            print("Authorization success=\(success)")
             if let error = error {
                 print(error)
             }
-            completion(success)
-        }
-    }
-
-    func loadTotalDistance() {
-        authorizeHealthKit { [weak self] authorized in
-            guard authorized else {
-                return
+            DispatchQueue.main.async {
+                completion(success)
+                self.loadWorkoutData()
             }
-            self?.loadDistanceData()
         }
     }
 
-    private func loadDistanceData() {
+    private func loadWorkoutData() {
         print("Load distance")
         let predicate = HKQuery.predicateForWorkouts(with: .cycling)
         let query = HKAnchoredObjectQuery(

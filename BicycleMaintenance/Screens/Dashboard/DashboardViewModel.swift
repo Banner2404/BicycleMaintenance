@@ -21,11 +21,6 @@ class DashboardViewModel {
         servicesRelay.value.count
     }
 
-    var isLoading: Driver<Bool> {
-        loadingRelay.asDriver()
-    }
-    // TODO: remove loading 
-    private let loadingRelay = BehaviorRelay<Bool>(value: false)
     private let servicesRelay = BehaviorRelay<[ServiceTypeViewModel]>(value: [])
     private let disposeBag = DisposeBag()
     private var totalDistance: Observable<Int> {
@@ -48,6 +43,10 @@ class DashboardViewModel {
             }
             .bind(to: servicesRelay)
             .disposed(by: disposeBag)
+    }
+
+    func needHealthOnboarding() -> Bool {
+        return WorkoutDataManager.shared.canRequestAuthorization
     }
 
     func viewModelForService(at index: Int) -> ServiceTypeViewModel {

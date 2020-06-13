@@ -7,6 +7,66 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Onboarding Health View Controller-->
+        <scene sceneID="S5E-K1-zVc">
+            <objects>
+                <viewController id="MHM-B1-h6b" customClass="OnboardingHealthViewController" customModule="BicycleMaintenance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UEg-Hu-0g4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HDc-bz-iE9">
+                                <rect key="frame" x="50" y="175" width="314" height="281.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="health" translatesAutoresizingMaskIntoConstraints="NO" id="8U7-dR-gO3">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect to Apple Health" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SB8-nP-5b6">
+                                        <rect key="frame" x="0.0" y="104" width="172" height="72"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This setting allows you to automatically update your bike service by using data about your cycling workouts" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCt-RL-wWZ">
+                                        <rect key="frame" x="0.0" y="186" width="284.5" height="95.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8G-nl-h38" customClass="OnboardingButton" customModule="BicycleMaintenance" customModuleProvider="target">
+                                <rect key="frame" x="20" y="652" width="374" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="Vrs-sU-Jq2"/>
+                                </constraints>
+                                <state key="normal" title="Connect"/>
+                                <connections>
+                                    <action selector="connectButtonTap:" destination="MHM-B1-h6b" eventType="touchUpInside" id="klT-Ux-pEs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="HDc-bz-iE9" firstAttribute="centerY" secondItem="UEg-Hu-0g4" secondAttribute="centerY" multiplier="0.75" id="Cub-Zd-U4l"/>
+                            <constraint firstItem="w8G-nl-h38" firstAttribute="leading" secondItem="jlV-V0-8kd" secondAttribute="leading" constant="20" id="Eiy-I9-HDx"/>
+                            <constraint firstItem="w8G-nl-h38" firstAttribute="centerX" secondItem="UEg-Hu-0g4" secondAttribute="centerX" id="URN-Eh-osi"/>
+                            <constraint firstItem="HDc-bz-iE9" firstAttribute="centerX" secondItem="UEg-Hu-0g4" secondAttribute="centerX" id="hYw-2m-Jz8"/>
+                            <constraint firstItem="HDc-bz-iE9" firstAttribute="leading" secondItem="UEg-Hu-0g4" secondAttribute="leading" constant="50" id="kMf-bc-sxI"/>
+                            <constraint firstItem="jlV-V0-8kd" firstAttribute="bottom" secondItem="w8G-nl-h38" secondAttribute="bottom" constant="100" id="mgJ-oJ-ef1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jlV-V0-8kd"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="W2D-FZ-b5D"/>
+                    <connections>
+                        <outlet property="connectButton" destination="w8G-nl-h38" id="WYQ-d4-rz3"/>
+                        <outlet property="imageView" destination="8U7-dR-gO3" id="coZ-gE-8Ik"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NTa-Mh-alG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1038" y="-636"/>
+        </scene>
         <!--Dashboard View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -99,20 +159,6 @@
                                     <constraint firstAttribute="width" secondItem="CPD-on-LrZ" secondAttribute="height" multiplier="414:317" id="Hej-HN-Kdd"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="h3H-M8-5ak">
-                                <rect key="frame" x="169.5" y="597.5" width="75" height="62.5"/>
-                                <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="TOe-YQ-4Cy">
-                                        <rect key="frame" x="19" y="0.0" width="37" height="37"/>
-                                    </activityIndicatorView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ms-Vr-A27">
-                                        <rect key="frame" x="0.0" y="42" width="75" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKc-y5-r5Y">
                                 <rect key="frame" x="358" y="56" width="44" height="44"/>
                                 <state key="normal" image="more_icon"/>
@@ -127,11 +173,9 @@
                             <constraint firstItem="CPD-on-LrZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bd0-bc-rR0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zbe-db-wpA" secondAttribute="trailing" id="Mfc-0F-5QX"/>
                             <constraint firstAttribute="bottom" secondItem="Zbe-db-wpA" secondAttribute="bottom" id="QIa-OE-Yqz"/>
-                            <constraint firstItem="h3H-M8-5ak" firstAttribute="centerX" secondItem="Zbe-db-wpA" secondAttribute="centerX" id="TIQ-QJ-VhI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vKc-y5-r5Y" secondAttribute="trailing" constant="12" id="iQh-jK-qAM"/>
                             <constraint firstItem="vKc-y5-r5Y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="kDt-0X-W3h"/>
                             <constraint firstItem="CPD-on-LrZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rBc-NX-sei"/>
-                            <constraint firstItem="h3H-M8-5ak" firstAttribute="centerY" secondItem="Zbe-db-wpA" secondAttribute="centerY" id="rp0-dp-bAv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CPD-on-LrZ" secondAttribute="trailing" id="rqH-lK-etf"/>
                             <constraint firstItem="Zbe-db-wpA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ykF-8L-Mm5"/>
                         </constraints>
@@ -139,9 +183,9 @@
                     </view>
                     <connections>
                         <outlet property="bikeView" destination="CPD-on-LrZ" id="08c-RD-bXi"/>
-                        <outlet property="loadingView" destination="h3H-M8-5ak" id="uIK-cb-ifi"/>
                         <outlet property="tableView" destination="Zbe-db-wpA" id="UlE-we-BKV"/>
                         <segue destination="Dbj-4P-YtT" kind="show" identifier="workoutsSegue" id="ETS-e7-BDq"/>
+                        <segue destination="MHM-B1-h6b" kind="show" identifier="healthOnboardingSegue" id="3HA-Iy-Ugj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -230,6 +274,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="health" width="94" height="94"/>
         <image name="more_icon" width="44" height="44"/>
     </resources>
 </document>

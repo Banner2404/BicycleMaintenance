@@ -16,8 +16,7 @@ class DashboardViewController: UIViewController {
     private let disposeBag = DisposeBag()
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var bikeView: BikeView!
-    @IBOutlet private weak var loadingView: UIStackView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = DashboardViewModel()
@@ -26,14 +25,12 @@ class DashboardViewController: UIViewController {
                 self?.reloadData(viewModels)
             })
             .disposed(by: disposeBag)
-
-        viewModel.isLoading
-            .map { !$0 }
-            .drive(loadingView.rx.isHidden)
-            .disposed(by: disposeBag)
-        viewModel.isLoading
-            .drive(tableView.rx.isHidden)
-            .disposed(by: disposeBag)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if viewModel.needHealthOnboarding() {
+            performSegue(withIdentifier: "healthOnboardingSegue", sender: self)
+        }
     }
 
     private func reloadData(_ viewModels: [ServiceTypeViewModel]) {
