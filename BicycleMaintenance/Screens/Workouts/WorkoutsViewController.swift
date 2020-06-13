@@ -12,9 +12,10 @@ import RxCocoa
 
 class WorkoutsViewController: UIViewController {
 
-    @IBOutlet private weak var tableView: UITableView!
     private var viewModel: WorkoutsViewModel!
     private let disposeBag = DisposeBag()
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var emptyView: UIStackView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,19 @@ class WorkoutsViewController: UIViewController {
                 self?.tableView.reloadData()
             })
             .disposed(by: disposeBag)
+
+        viewModel.hasWorkouts
+            .drive(emptyView.rx.isHidden)
+            .disposed(by: disposeBag)
+
+        viewModel.hasWorkouts
+            .map { !$0 }
+            .drive(tableView.rx.isHidden)
+            .disposed(by: disposeBag)
+    }
+    
+    @IBAction private func goToSettingsButtonTap(_ sender: Any) {
+        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
     }
 
 }

@@ -234,18 +234,46 @@
                                     <outlet property="delegate" destination="a8K-ve-BNM" id="LAc-4f-Oof"/>
                                 </connections>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Q9g-gR-f3u">
+                                <rect key="frame" x="60" y="365.5" width="294" height="111.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No workouts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adK-m9-Xeu">
+                                        <rect key="frame" x="0.0" y="0.0" width="294" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check that you granted access to your Health data" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VII-XO-1bc">
+                                        <rect key="frame" x="0.0" y="30.5" width="294" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDm-DE-pet">
+                                        <rect key="frame" x="0.0" y="81.5" width="294" height="30"/>
+                                        <state key="normal" title="Go to settings"/>
+                                        <connections>
+                                            <action selector="goToSettingsButtonTap:" destination="a8K-ve-BNM" eventType="touchUpInside" id="FH9-YA-RS4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Q9g-gR-f3u" firstAttribute="leading" secondItem="hZ0-Me-l28" secondAttribute="leading" constant="60" id="1y4-Jg-Z6o"/>
                             <constraint firstItem="Q2S-sg-vBl" firstAttribute="leading" secondItem="hZ0-Me-l28" secondAttribute="leading" id="CPF-bt-cEn"/>
+                            <constraint firstItem="Q9g-gR-f3u" firstAttribute="centerY" secondItem="PE0-cR-OUD" secondAttribute="centerY" id="F89-Sp-1xx"/>
                             <constraint firstItem="Q2S-sg-vBl" firstAttribute="top" secondItem="hZ0-Me-l28" secondAttribute="top" id="Nj4-nF-m8f"/>
                             <constraint firstAttribute="bottom" secondItem="Q2S-sg-vBl" secondAttribute="bottom" id="VMr-pz-9TC"/>
+                            <constraint firstItem="Q9g-gR-f3u" firstAttribute="centerX" secondItem="PE0-cR-OUD" secondAttribute="centerX" id="XIc-jO-8cz"/>
                             <constraint firstItem="hZ0-Me-l28" firstAttribute="trailing" secondItem="Q2S-sg-vBl" secondAttribute="trailing" id="tlB-qV-gMT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hZ0-Me-l28"/>
                     </view>
                     <navigationItem key="navigationItem" title="Workouts" id="A3O-Gj-zcF"/>
                     <connections>
+                        <outlet property="emptyView" destination="Q9g-gR-f3u" id="8fV-QB-ktH"/>
                         <outlet property="tableView" destination="Q2S-sg-vBl" id="CY6-Jr-ZJj"/>
                     </connections>
                 </viewController>

@@ -16,6 +16,10 @@ class WorkoutsViewModel {
         workoutsRelay.asDriver()
     }
 
+    var hasWorkouts: Driver<Bool> {
+        workouts.map { !$0.isEmpty }
+    }
+
     var numberOfWorkouts: Int {
         workoutsRelay.value.count
     }
